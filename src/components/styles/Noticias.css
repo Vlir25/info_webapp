@@ -1,0 +1,224 @@
+/* Variables para colores y fuentes */
+:root {
+  --color-principal: #27ae60;
+  --color-hover: #1abc9c;
+  --color-fondo: rgba(255, 255, 255, 0.662);
+  --color-fondo-hover: rgba(255, 255, 255, 0.795);
+  --color-texto-oscuro: #2c3e50;
+  --color-texto-claro: #34495e;
+  --color-fecha: #393a3c;
+  --color-paginacion: #399838;
+  --color-paginacion-hover: #0056b3;
+  --color-sombra: rgba(0, 0, 0, 0.1);
+  --color-sombra-hover: rgba(0, 0, 0, 0.2);
+  --color-sombra-focus: rgba(39, 174, 96, 0.4);
+  --color-texto-secundario: #7f8c8d;
+}
+
+
+
+/* Estilos para el contenedor principal - ventana Noticias */
+.novedades-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--color-fondo);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px var(--color-sombra);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novedades-container:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+/* Estilos del encabezado */
+.novedades-header {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--color-texto-oscuro);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--fuente-principal);
+}
+
+/* Estilos para cada tarjeta */
+.item {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px var(--color-sombra-hover);
+}
+
+/* Estilos para la imagen de la tarjeta */
+.item-image {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para el contenido de la tarjeta */
+.item-content {
+  padding: 20px;
+  flex: 1;
+}
+
+/* Estilos para el título de la tarjeta */
+.item-title {
+  font-size: 1.75em;
+  margin: 0 0 15px;
+  color: var(--color-texto-claro);
+  font-weight: 600;
+  transition: color 0.2s ease;
+  font-family: var(--fuente-secundaria);
+}
+
+.item-title:hover {
+  color: var(--color-principal);
+}
+
+/* Estilos para el botón de leer más */
+.leer-mas-btn {
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  font-size: 1em;
+}
+
+.leer-mas-btn:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+.leer-mas-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-sombra-focus);
+}
+
+/* Estilos para el contenido adicional */
+.contenido {
+  margin-top: 15px;
+  color: var(--color-texto-secundario);
+  line-height: 1.6;
+}
+
+/* Estilos para la fecha de publicación */
+.item-date {
+  text-align: right;
+  font-size: 1.3rem;
+  color: var(--color-fecha);
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.item-date:hover {
+  color: var(--color-principal);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Paginación - Control de navegación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 15px;
+  background-color: var(--color-paginacion);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--color-paginacion-hover);
+}
+
+.pagination button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 151, 51, 0.5);
+}
+
+.pagination span {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+  .novedades-header {
+    font-size: 2em;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .item-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .novedades-container {
+    padding: 20px;
+  }
+
+  .item {
+    margin-bottom: 20px;
+  }
+
+  .item-title {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .novedades-header {
+    font-size: 1.5em;
+  }
+
+  .item-title {
+    font-size: 1.25em;
+  }
+
+  .leer-mas-btn {
+    font-size: 0.9em;
+  }
+}

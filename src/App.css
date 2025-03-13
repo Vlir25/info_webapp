@@ -1,38 +1,149 @@
-.App {
+/* Importa la fuente desde Google Fonts
+CONFIGURACION ESTILO DE LA VENTANA DE QUE SOMOS?
+*/
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+/* Elimina el zoom global y ajusta el height y width */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%; /* Ajusta este valor para un zoom más grande */
+}
+
+body {
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 1rem; /* Usa rem para que sea relativo */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    color: #000000; /* Color de texto */
+    background-color: rgba(212, 235, 198, 0.914); /* Color de fondo general con transparencia */
+    background-image: url('/public/images/planta.png'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen para que no se mueva con el scroll */
+}
+
+
+footer {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center; /* Alinea verticalmente al centro */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    background-color: #27282d; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    padding: 1rem; /* Espaciado interno */
+    width: 100%; /* Abarcar todo el ancho */
+}
+
+footer h2 {
+    color: #fff; /* Asegura que el texto del título sea blanco */
+    margin: 0; /* Eliminar márgenes para mantener la disposición */
+    font-size: 1.5rem; /* Tamaño de fuente para el título, puedes ajustarlo como prefieras */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permitir que las columnas se ajusten si es necesario */
+    width: 100%; /* Abarcar todo el ancho */
+}
+
+.text-column, .links-column, .icons-column {
+    flex: 1; /* Distribuir el espacio igualmente */
+    min-width: 250px; /* Asegurar un ancho mínimo */
+    margin: 0 1rem; /* Espacio entre columnas */
+}
+
+.icons-column {
+    text-align: center; /* Centrar íconos */
+}
+
+.icon {
+    width: 50px; /* Ancho base de los iconos */
+    height: 50px; /* Alto base de los iconos */
+    margin: 1rem; /* Espaciado entre iconos */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    main {
+        padding: 1.5rem; /* Ajusta el padding para tabletas */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 90%; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    body {
+        font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    }
+
+    .container {
+        padding: 1rem; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .text-column, .links-column, .icons-column {
+        flex: 1 1 100%; /* Apila columnas en pantallas pequeñas */
+        margin: 0.5rem 0; /* Espacio entre columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 80%; /* Ajusta aún más en pantallas muy pequeñas */
+    }
+
+    footer {
+        padding: 0.5rem; /* Menos espaciado en pantallas muy pequeñas */
+    }
+
+    body {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+
+    .icon {
+        width: 40px; /* Reduce el tamaño de los iconos */
+        height: 40px; /* Reduce el tamaño de los iconos */
+    }
+
+    footer h2 {
+        font-size: 1.2rem; /* Ajusta el tamaño de fuente del título en el footer */
+    }
+}
+/* Estilos generales para el contenedor de Markdown */
+.markdown-container {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Ajustes específicos para ecuaciones en KaTeX */
+.katex {
+  font-size: 1.2em;
+  display: block;
+  overflow-x: auto;
+}
+
+.katex-display {
   text-align: center;
+  margin: 10px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.katex-html {
+  display: inline-block;
 }

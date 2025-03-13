@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+  margin: 0; /* Elimina el margen predeterminado del body */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido en columna */
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla */
+  background-color: #f4f4f4; /* Fondo más suave */
+  font-family: 'Arial', sans-serif; /* Definir una fuente */
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #333; /* Color de fondo del navbar */
+  color: white; /* Color del texto del navbar */
+  padding: 15px 20px; /* Añadir algo más de espaciado */
+  text-align: center; /* Centrar el contenido */
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+}
+
+/* Contenedor principal para los testimonios */
+.testimonios-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas ajustables */
+  gap: 30px; /* Más espacio entre las tarjetas */
+  padding: 20px;
+  flex-grow: 1;
+  overflow: hidden; /* Evitar scroll no deseado */
+  box-sizing: border-box; /* Asegura que padding no afecte el tamaño total */
+}
+
+/* Estilo para cada tarjeta de testimonio */
+.testimonio-card {
+  background-color: rgb(255, 255, 255); /* Fondo inicial con algo de transparencia */
+  border: 1px solid #ddd; /* Borde más suave */
+  border-radius: 12px; /* Esquinas más redondeadas */
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease; /* Agregamos la transición para el fondo */
+  will-change: transform, box-shadow, background-color; /* Mejora el rendimiento */
+}
+
+/* Efecto de hover para las tarjetas */
+.testimonio-card:hover {
+  transform: translateY(-10px); /* Efecto de elevar más al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hacer hover */
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo más transparente cuando se pasa el mouse */
+}
+
+/* Estilo para la imagen del testimonio */
+.testimonio-image {
+  width: 100%;
+  height: 180px; /* Altura más adaptable */
+  object-fit: cover;
+  border-top-left-radius: 12px; /* Bordes redondeados solo en la parte superior */
+  border-top-right-radius: 12px;
+}
+
+/* Estilo para el título del testimonio */
+.testimonio-title {
+  font-size: 1.4rem; /* Ajuste de tamaño */
+  margin: 15px 0 10px; /* Ajuste de márgenes */
+  color: #333; /* Color más oscuro para contraste */
+  font-weight: bold; /* Negrita para destacar */
+}
+
+/* Estilo para el contenido del testimonio */
+.testimonio-content {
+  font-size: 1rem;
+  color: #666; /* Color más suave para el texto */
+  padding: 0 15px 15px; /* Mejor ajuste del padding */
+  line-height: 1.6; /* Mejor espaciado entre líneas */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px; /* Reducir padding en pantallas pequeñas */
+    font-size: 1rem; /* Reducir tamaño de fuente */
+  }
+
+  .testimonios-container {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    gap: 15px; /* Menor espacio entre las tarjetas */
+  }
+}

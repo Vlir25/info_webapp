@@ -1,13 +1,17 @@
+// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { LanguageProvider } from './components/context/LanguageContext'; // Asegúrate de que la ruta sea correcta
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <LanguageProvider> {/* Envolver App con LanguageProvider */}
+      <App />
+    </LanguageProvider>
   </React.StrictMode>
 );
 

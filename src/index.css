@@ -5,9 +5,43 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
+  background-color: #f8f9fa; /* Color de fondo claro para el body */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño en pantallas pequeñas */
+    padding: 1rem; /* Espaciado adicional para el body */
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem; /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+    padding: 0.5rem; /* Menos espaciado */
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  background-color: #e9ecef; /* Fondo ligero para el código */
+  padding: 0.2rem 0.4rem; /* Espaciado alrededor del código */
+  border-radius: 0.25rem; /* Bordes redondeados */
+}
+
+/* Ajustes para el código en pantallas pequeñas */
+@media (max-width: 768px) {
+  code {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para código */
+  }
+}
+
+@media (max-width: 480px) {
+  code {
+    font-size: 0.85rem; /* Tamaño de fuente aún más pequeño para código en pantallas muy pequeñas */
+  }
 }
