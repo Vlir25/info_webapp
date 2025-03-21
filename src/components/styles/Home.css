@@ -1,6 +1,5 @@
 :root {
   --background-color: #f9f9f9;
-  --card-bg: #ffffff00;
   --border-color: #cccccc00;
   --text-color: #00000000;
   --h2-color: #1c9c1c; /* Color específico para h2 */
@@ -9,25 +8,16 @@
 /* Estilos generales */
 body {
   margin: 0;
-  background-color: var(--background-color);
   font-family: Arial, sans-serif; /* Definir la fuente por defecto */
 }
 
 /* Estilos para el contenedor principal */
 .home-container {
-  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   padding: 20px;
-  background-color: rgba(254, 250, 250, 0.896); /* Color de fondo inicial */
-  transition: background-color 0.3s ease, opacity 0.3s ease; /* Suaviza el cambio de fondo */
 }
 
-/* Estilo para el contenedor cuando se pasa el cursor */
-.home-container:hover {
-  background-color: rgba(240, 240, 240, 0.834); /* Fondo transparente al pasar el mouse */
-  opacity: 0.8; /* Opción para dar un efecto de opacidad */
-}
 
 /* Sección de introducción */
 .tech-intro {
@@ -65,13 +55,8 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
   width: 30%; /* Asegúrate de que encaje bien en el contenedor */
   margin-bottom: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añadido efecto de transformación */
 }
 
-.gallery-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-  transform: translateY(-5px); /* Efecto de elevación */
-}
 
 .gallery-icon {
   font-size: 3rem;
@@ -110,10 +95,7 @@ h1 {
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añadido efecto de transformación */
 }
 
-.team-member:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px); /* Efecto de elevación */
-}
+
 
 
 .team-image {

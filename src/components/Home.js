@@ -1,14 +1,30 @@
 import React, { useContext } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LanguageContext } from './context/LanguageContext';
-import { Carousel } from '@material-tailwind/react';
+import CarouselImg from './CarouselImg';
 import './styles/Home.css';
 
 const images = [
-  '/images/principal.png',
-  '/images/principal2.png',
-  '/images/monitoreo.jpeg',
+  {
+    src: "/images/principal.png",
+    alt: "Imagen principal 1",
+    title: "Bienvenido a nuestra plataforma",
+    description: "Descubre todo lo que tenemos para ti.",
+  },
+  {
+    src: "/images/principal2.png",
+    alt: "Imagen principal 2",
+    title: "Innovación y Tecnología",
+    description: "Soluciones avanzadas para un mundo en constante cambio.",
+  },
+  {
+    src: "/images/monitoreo.jpeg",
+    alt: "Monitoreo Inteligente",
+    title: "Monitoreo en tiempo real",
+    description: "Controla tus procesos con nuestra plataforma digital.",
+  },
 ];
+
 
 // Datos de los miembros del equipo -ventana incial
 const teamMembers = [
@@ -89,29 +105,10 @@ const Home = () => {
   const currentTranslations = translations[language];
 
   return (
-    <div className="home-container">
-
-      <div className="bg-blue-500 text-white p-4">
-        Tailwind CSS está funcionando correctamente.
-        <Carousel transition={{ duration: 2 }} className="rounded-xl" swipe={true}>
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
-      </div>
-
+    <div className="mt-10" >
+      {/* Contenedor del carrusel */}
+      <CarouselImg images={images} />
+      
       {/* Sección principal del proyecto */}
       <section className="tech-intro">
         <h1 style={{ textTransform: 'uppercase' }}>
