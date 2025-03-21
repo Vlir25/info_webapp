@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LanguageContext } from './context/LanguageContext';
-import ImageCarousel from './ImageCarousel';
+import { Carousel } from '@material-tailwind/react';
 import './styles/Home.css';
 
 const images = [
@@ -85,19 +85,34 @@ const sponsors = [
 ];
 
 const Home = () => {
-  const { language, translations } = useContext(LanguageContext);
+  const { language, translations } = useContext(LanguageContext); // Asegúrate de que el contexto esté disponible
   const currentTranslations = translations[language];
 
   return (
-
-
-
-
     <div className="home-container">
-      {/* Carrusel de imágenes */}
-      <ImageCarousel images={images} interval={3000} />
-      
-      {/* Sección principal del proyecto /* */}
+
+      <div className="bg-blue-500 text-white p-4">
+        Tailwind CSS está funcionando correctamente.
+        <Carousel transition={{ duration: 2 }} className="rounded-xl" swipe={true}>
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+      </div>
+
+      {/* Sección principal del proyecto */}
       <section className="tech-intro">
         <h1 style={{ textTransform: 'uppercase' }}>
           {currentTranslations.mainTitle}
@@ -168,6 +183,7 @@ const Home = () => {
         </div>
       </section>
 
+      
 
       {/* Sección de patrocinadores */}
       <section className="sponsors-wrapper">
