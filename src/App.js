@@ -8,6 +8,7 @@ import Testimonios from './components/Testimonios';
 import Novedades from './components/Noticias';
 import Geoportal from './components/Geoportal';
 import NoticiaDetalle from './components/NoticiasDetalle';
+import Contactos from './components/Contactos'; // Importa el componente Contactos
 import LoadingScreen from './components/LoadingScreen';
 import { SpeedInsights } from '@vercel/speed-insights/react'; // Importa el componente SpeedInsights
 import './App.css';
@@ -38,6 +39,7 @@ const App = () => {
                 <Route path="/testimonio" element={<Testimonios />} />
                 <Route path="/geoportal" element={<Geoportal />} />
                 <Route path="/noticia/:noticiaId" element={<NoticiaDetalle />} />
+                <Route path="/contactos" element={<Contactos />} />
                 <Route path="*" element={<Home />} />
               </Routes>
               {/* Agregar SpeedInsights en un lugar específico de la interfaz */}
