@@ -7,7 +7,11 @@ module.exports = withMT({
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#00B207", // Verde
+      },
+    },
   },
   plugins: [],
 });

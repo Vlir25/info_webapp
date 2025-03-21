@@ -8,8 +8,8 @@ const images = [
   {
     src: "/images/principal.png",
     alt: "Imagen principal 1",
-    title: "Bienvenido a nuestra plataforma",
-    description: "Descubre todo lo que tenemos para ti.",
+    title: "Agricultura Inteligente para un futuro sostenible",
+    description: "Transformando la producción agrícola mediante tecnología avanzada.",
   },
   {
     src: "/images/principal2.png",
@@ -114,22 +114,7 @@ const Home = () => {
         <h1 style={{ textTransform: 'uppercase' }}>
           {currentTranslations.mainTitle}
         </h1>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          margin: '20px 0'
-        }}>
-          <img
-            src="/images/postal.jpeg"
-            alt="Descripción de la imagen"
-            style={{
-              maxWidth: '80%',
-              height: 'auto',
-              margin: '10px 0'
-            }}
-          />
-        </div>
+
         <p>{currentTranslations.projectDescription}</p>
       </section>
 

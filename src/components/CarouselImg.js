@@ -63,21 +63,22 @@ const CarouselImg = ({ images }) => {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-2 text-xl md:text-3xl lg:text-5xl font-bold max-w-[80%] md:max-w-[50%]"
+                className="mb-2 text-xl text-right md:text-3xl lg:text-5xl font-bold max-w-[80%] md:max-w-[50%]"
               >
                 {image.title || "Título de la imagen"}
               </Typography>
+
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-4 opacity-90 text-sm md:text-lg max-w-[80%] md:max-w-[50%]"
+                className="mb-4 opacity-90 text-sm text-right md:text-lg max-w-[80%] md:max-w-[50%]"
               >
                 {image.description || "Descripción corta de la imagen."}
               </Typography>
 
               {index === 0 && (
-                <Button size="md" color="white" className="bg-green-600 hover:bg-green-700">
-                  ¡Explora más!
+                <Button size="md" className=" bg-primary hover:bg-green-700" >
+                  Conoce más
                 </Button>
               )}
             </div>
