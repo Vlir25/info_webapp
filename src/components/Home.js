@@ -1,7 +1,14 @@
 import React, { useContext } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LanguageContext } from './context/LanguageContext';
+import ImageCarousel from './ImageCarousel';
 import './styles/Home.css';
+
+const images = [
+  '/images/principal.png',
+  '/images/principal2.png',
+  '/images/monitoreo.jpeg',
+];
 
 // Datos de los miembros del equipo -ventana incial
 const teamMembers = [
@@ -82,8 +89,15 @@ const Home = () => {
   const currentTranslations = translations[language];
 
   return (
+
+
+
+
     <div className="home-container">
-      {/* Sección principal del proyecto */}
+      {/* Carrusel de imágenes */}
+      <ImageCarousel images={images} interval={3000} />
+      
+      {/* Sección principal del proyecto /* */}
       <section className="tech-intro">
         <h1 style={{ textTransform: 'uppercase' }}>
           {currentTranslations.mainTitle}
