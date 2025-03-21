@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 12000); // Simula una pantalla de carga de 12 segundos
+    }, 1000); // Simula una pantalla de carga de 12 segundos
     return () => clearTimeout(timer);
   }, []);
 

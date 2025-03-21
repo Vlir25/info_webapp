@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* Importa la fuente desde Google Fonts
 CONFIGURACION ESTILO DE LA VENTANA DE QUE SOMOS?
 */

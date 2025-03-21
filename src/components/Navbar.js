@@ -39,7 +39,11 @@ const LanguageButton = memo(({ lang, currentLang, onClick, children }) => {
   return (
     <button
       onClick={() => onClick(lang)}
-      className={`lang-btn ${currentLang === lang ? 'active' : ''}`}
+      className={`lang-btn px-3 py-0.5 rounded ${
+        currentLang === lang 
+          ? 'bg-green-500 text-white' 
+          : 'bg-gray-200 text-black hover:bg-gray-300'
+      }`}
       aria-label={ariaLabel}
     >
       {children}
@@ -93,17 +97,18 @@ const Navbar = ({
       {loading && <LoadingScreen />}
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div 
-          className="navbar-title"
+          className="flex items-center space-x-2 cursor-pointer"
           style={{ fontSize: logoSize }}
           onClick={handleLogoClick}
           role="button"
           tabIndex={0}
           onKeyPress={(e) => e.key === 'Enter' && handleLogoClick()}
         >
-          <GiZigzagLeaf aria-label="Logo" />
+          <GiZigzagLeaf aria-label="Logo" className="text-green-500" />
+          <span className="text-xl font-bold text-white text-left">VLIROUS SHORT INITIATIVE: <br/> SMART FARMING</span>
         </div>
 
-        <ul className="navbar-links">
+        <ul className="flex space-x-4">
           {navLinks.map(({ to, label }) => (
             <NavLink key={to} to={to}>
               {label}
@@ -111,7 +116,7 @@ const Navbar = ({
           ))}
         </ul>
 
-        <div className="language-buttons">
+        <div className="flex space-x-2">
           {['es', 'en'].map((lang) => (
             <LanguageButton
               key={lang}
