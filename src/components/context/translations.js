@@ -10,7 +10,7 @@ const translations = {
     },
     
     // Traducción del título principal de la página
-    mainTitle: "🌱 Agricultura Inteligente para un Futuro Sostenible",
+    mainTitle: "Agricultura Inteligente para un Futuro Sostenible",
 
     // Descripción del proyecto
     projectDescription: "Es una iniciativa que busca revolucionar la producción agrícola a través del uso de tecnologías avanzadas. Nuestro enfoque combina monitoreo remoto, inteligencia artificial y análisis de datos para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
@@ -27,7 +27,7 @@ const translations = {
     sponsorsTitle: "Entidades participantes",
    
     newSponsorTitle: "📢 Auspiciante",
-    newSponsorDescription: "El desarrollo de este proyecto ha sido posible gracias al apoyo de VLIR-UOS a través de un Short Initiative, un programa que impulsa la cooperación académica entre instituciones de Bélgica y países en desarrollo. Este financiamiento ha permitido la integración de tecnología avanzada en la agricultura, promoviendo el uso de inteligencia artificial, monitoreo remoto y procesamiento de datos multiespectrales para mejorar la productividad y sostenibilidad de los cultivos. Nuestro compromiso es generar un impacto positivo en el sector agrícola, contribuyendo a la innovación y fortaleciendo las capacidades locales mediante investigación aplicada y colaboración internacional.",
+    newSponsorDescription: "Este proyecto ha sido posible gracias al apoyo de VLIR-UOS a través de un Short Initiative, fomentando la cooperación académica entre Bélgica y países en desarrollo. El financiamiento ha permitido integrar inteligencia artificial, monitoreo remoto y análisis multiespectral en la agricultura, mejorando su productividad y sostenibilidad. Buscamos impactar el sector agrícola mediante innovación, investigación aplicada y colaboración internacional.",
     // Títulos de la galería y del equipo
 
     teamTitle: "Colaboradores",
@@ -100,7 +100,7 @@ const translations = {
     },
 
     // Traducción del título principal de la página
-    mainTitle: "🌱 Smart Agriculture for a Sustainable Future.",
+    mainTitle: "Smart Agriculture for a Sustainable Future.",
 
     // Descripción del proyecto
     projectDescription: "Is an initiative that seeks to revolutionize agricultural production through the use of advanced technologies. Our approach combines remote monitoring, artificial intelligence and data analytics to optimize crop yields and reduce inequality in rural communities.",
@@ -120,7 +120,7 @@ const translations = {
     sponsorsTitle: "Entities Involved",
 
     newSponsorTitle: "📢 Sponsor",
-    newSponsorDescription: "The development of this project has been made possible thanks to the support of VLIR-UOS through a Short Initiative, a program that promotes academic cooperation between Belgian institutions and developing countries. This funding has enabled the integration of advanced technology in agriculture, fostering the use of artificial intelligence, remote monitoring, and multispectral data processing to enhance crop productivity and sustainability. Our commitment is to create a positive impact in the agricultural sector, contributing to innovation and strengthening local capacities through applied research and international collaboration.",
+    newSponsorDescription: "This project has been made possible with the support of VLIR-UOS through a Short Initiative, promoting academic cooperation between Belgium and developing countries. The funding has enabled the integration of AI, remote monitoring, and multispectral analysis in agriculture, enhancing productivity and sustainability. We aim to create a positive impact on the agricultural sector through innovation, applied research, and international collaboration.",
 
     // Títulos de la galería y del equipo
     galleryTitle: "Innovation Gallery",
