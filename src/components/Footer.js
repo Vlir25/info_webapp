@@ -1,10 +1,30 @@
 import React, { useContext, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
 import { LanguageContext } from '../components/context/LanguageContext'; // Asegúrate de importar el LanguageContext
+import { Typography } from "@material-tailwind/react";
+
 import './styles/Footer.css';
+
+const LINKS = [
+  {
+    title: "Product",
+    items: ["Overview", "Features", "Solutions", "Tutorials"],
+  },
+  {
+    title: "Company",
+    items: ["About us", "Careers", "Press", "News"],
+  },
+  {
+    title: "Resource",
+    items: ["Blog", "Newsletter", "Events", "Help center"],
+  },
+];
+
+const currentYear = new Date().getFullYear();
+
+
+
+
 
 const Footer = () => {
   const { language } = useContext(LanguageContext); // Accedemos al idioma actual desde el contexto
@@ -80,43 +100,88 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <div className="footer-content">
-        <div className="text-column">
-          <p>{texts[language].copyright}</p>
-          <p>{texts[language].termsOfUse}</p>
-          <p>{texts[language].privacyPolicy}</p>
-          <p>{texts[language].cookiePolicy}</p>
-        </div>
-        <div className="links-column">
-          <h2>{texts[language].quickLinks}</h2>
-          <ul>
-            <li><Link to="/" onClick={scrollToTop}>{texts[language].aboutUs}</Link></li>
-            <li><Link to="/testimonio" onClick={scrollToTop}>{texts[language].whatWeDo}</Link></li>
-            <li><Link to="/noticias" onClick={scrollToTop}>{texts[language].news}</Link></li>
-            <li><Link to="/geoportal" onClick={scrollToTop}>{texts[language].geoportal}</Link></li>
-          </ul>
-        </div>
-        <div className="icons-column">
-          <h2>{texts[language].contactUs}</h2>
-          <div className="icons">
-            <a href="https://www.instagram.com/cavound_tech/" target="_blank" rel="noopener noreferrer" title={texts[language].instagramTitle}>
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://api.whatsapp.com/send/?phone=593983300503&text=¡Hola%21+Estoy+preguntando+por+los+servicios+de+CAVOUND.%0A&type=phone_number&app_absent=0" title={texts[language].callTitle}>
-              <FontAwesomeIcon icon={faPhone} />
-            </a>
-            <a href="https://maps.app.goo.gl/cmYqCFZKbBaXd1d47" target="_blank" rel="noopener noreferrer" title={texts[language].locationTitle}>
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
-            </a>
-            <button onClick={copyEmailToClipboard} title={texts[language].emailTitle} className="email-button">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </button>
+    <footer className="relative w-full bg-gray-900 text-white py-8">
+      <div className="mx-auto w-full max-w-7xl px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Sección Izquierda */}
+          <div>
+            <div className="flex items-center">
+              <div className="w-8 h-8 flex items-center justify-center mr-4">
+                <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+              </div>
+              <p className="text-xl">VLIROUS SHORT INITIATIVE:<br />SMART FARMING</p>
+            </div>
+            <br />
+            <p className="text-lg mt-2 text-gray-500">Agricultura Inteligente para un Futuro Sostenible</p>
+            <br />
+            <div className="flex items-center justify-left space-x-4 text-white">
+              {/* Teléfono */}
+              <div className="relative flex flex-col items-center">
+                <a href="tel:+593999999999" className="font-medium text-lg">
+                  (+593) 99-999-9999
+                </a>
+                <span className="w-full h-0.5 bg-green-500 mt-1"></span>
+              </div>
+
+              {/* Separador "or" */}
+              <span className="text-gray-400 text-lg">o</span>
+
+              {/* Correo */}
+              <div className="relative flex flex-col items-center">
+                <a href="mailto:vlir2025@gmail.com" className="font-medium text-lg">
+                  vlir2025@gmail.com
+                </a>
+                <span className="w-full h-0.5 bg-green-500 mt-1"></span>
+              </div>
+            </div>
           </div>
-          {copyMessage && <p className="copy-message">{copyMessage}</p>}
+
+          {/* Sección Derecha - Enlaces Rápidos */}
+          <div className="ml-auto ">
+            <Typography variant="h6" className="mb-3">Enlaces Rápidos</Typography>
+            <ul className="space-y-2 text-left">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">Inicio</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">Qué Hacemos</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">Noticias</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">Geoportal</a>
+              </li>
+            </ul>
+
+            {/* Redes Sociales */}
+            <div className="mt-6 flex justify-end space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Línea Divisoria */}
+        <div className="border-t border-gray-700 my-6"></div>
+
+        {/* Copyright */}
+        <div className="text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} Smart Farming. Todos los derechos reservados.
         </div>
       </div>
     </footer>
+
   );
 };
 

@@ -1,6 +1,7 @@
 // Navbar.js - cambios
 import React, { useState, useContext, memo, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GiZigzagLeaf } from 'react-icons/gi';
 import PropTypes from 'prop-types';
 import LoadingScreen from './LoadingScreen';
@@ -94,8 +95,7 @@ const Navbar = ({
   const navLinks = customLinks || defaultLinks;
 
   return (
-    <div className="navbar-container">
-      {loading && <LoadingScreen />}
+    <div className="navbar-container bg-gray-900">
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div 
           className="flex items-center space-x-2 cursor-pointer"
@@ -105,10 +105,15 @@ const Navbar = ({
           tabIndex={0}
           onKeyPress={(e) => e.key === 'Enter' && handleLogoClick()}
         >
-          <GiZigzagLeaf aria-label="Logo" className="text-green-500" />
-          <span className="text-xl font-bold text-white text-left">VLIROUS SHORT INITIATIVE: <br/> SMART FARMING</span>
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 flex items-center justify-center mr-4">
+                          <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+                        </div>
+                        <p className="text-xl text-left">VLIROUS SHORT INITIATIVE:
+                          <br />
+                          SMART FARMING</p>
+                      </div>
         </div>
-
         <ul className="flex space-x-4">
           {navLinks.map(({ to, label }) => (
             <NavLink key={to} to={to}>

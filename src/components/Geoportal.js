@@ -136,7 +136,7 @@ const Geoportal = () => {
     <label className="text-gray-700">¿Te gustaría vincularte a la comunidad?</label>
   </div>
 
-  <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
+  <button type="submit" className="w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
     Enviar
   </button>
 </form>

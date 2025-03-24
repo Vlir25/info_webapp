@@ -1,9 +1,4 @@
-:root {
-  --background-color: #f9f9f9;
-  --border-color: #cccccc00;
-  --text-color: #00000000;
-  --h2-color: #1c9c1c; /* Color específico para h2 */
-}
+
 
 /* Estilos generales */
 body {
@@ -28,14 +23,12 @@ body {
 h2 {
   margin-top: 40px;
   font-size: 30px;
-  color: var(--h2-color); /* Cambiar a la variable específica para h2 */
   text-align: left;
 }
 
 h1 {
   margin-top: 40px;
   font-size: 30px;
-  color: var(--h2-color); /* Cambiar a la variable específica para h2 */
   text-align: center;
 }
 

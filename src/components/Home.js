@@ -1,10 +1,20 @@
 import React, { useContext } from 'react';
-import { FaLinkedin } from 'react-icons/fa';
 import { LanguageContext } from './context/LanguageContext';
 import CarouselImg from './CarouselImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '@material-tailwind/react';
 import './styles/Home.css';
+import OurTeamCard from './OurTeamCard';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Importa los módulos necesarios desde Swiper
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
 
 const images = [
   {
@@ -32,18 +42,21 @@ const images = [
 const teamMembers = [
   {
     name: "Patrick Vandewalle",
+    role: "KU Leuven",
     img: "/list_colab/colab_1.png",
     img2: "/list_colab/colab_10.png",
     linkedIn: "https://www.linkedin.com/in/vandewallepatrick/"
   },
   {
     name: "Esteban Valencia",
+    role: "EPN",
     img: "/list_colab/colab_2.png",
     img2: "/list_colab/colab_9.png",
     linkedIn: "https://www.linkedin.com/in/esteban-valencia-torres/"
   },
   {
     name: "Jackeline Abad",
+    role: "EPN",
     img: "/list_colab/colab_4.png",
     img2: "/list_colab/colab_9.png",
     linkedIn: "https://www.linkedin.com/in/jackeline-abad-torres-a5090b29/"
@@ -68,12 +81,14 @@ const teamMembers = [
   },*/
   {
     name: "Jenny Ávila",
+    role: "EPN",
     img: "https://cdn.pixabay.com/photo/2020/11/29/01/25/woman-5786062_1280.png",
     img2: "/list_colab/colab_9.png",
     linkedIn: "https://www.linkedin.com/in/jenny-%C3%A1vila-v%C3%A9lez-801a3443/"
   },
   {
     name: "Cristina Romero",
+    role: "EPN",
     img: "/list_colab/colab_8.png",
     img2: "/list_colab/colab_9.png",
     linkedIn: "https://www.linkedin.com/in/cristina-romero-65450624/"
@@ -103,7 +118,7 @@ const sponsors = [
 ];
 
 const Home = () => {
-  const { language, translations } = useContext(LanguageContext); // Asegúrate de que el contexto esté disponible
+  const { language, translations } = useContext(LanguageContext);
   const currentTranslations = translations[language];
 
   return (
@@ -114,7 +129,7 @@ const Home = () => {
       </section>
 
       {/* Sección principal del proyecto */}
-      <section className="text-center bg-gray-300 mt-10 mb-10  p-[10vw] shadow-lg">
+      <section className="text-center bg-gray-300 mt-8 mb-8  p-[10vw] pt-8 pb-8 shadow-lg">
         <h1 style={{ textTransform: 'uppercase' }}>
           {/*currentTranslations.mainTitle*/}
         </h1>
@@ -137,14 +152,18 @@ const Home = () => {
       </section>
 
       {/* Nueva Sección Sobre el proyecto */}
-      <section className="text-center  p-[5vw]  ">
+      <section className="text-center  p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">Sobre el proyecto</h2>
+
         {/* Sección de Objetivos */}
         <div className="flex flex-col md:flex-row items-center mb-10">
           {/* Texto a la izquierda */}
           <div className="md:w-1/2  text-left p-4">
             <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newThemeTitle}</h3>
+            <br />
+            <br />
             <p className="text-xl">{currentTranslations.newThemeDescription}
+              <br />
               <br />
               <br />
               <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
@@ -163,42 +182,38 @@ const Home = () => {
         <div className="flex flex-col md:flex-row-reverse items-center">
           <div className="md:w-1/2 text-left p-4">
             <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newLines}</h3>
-
+            <br />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Línea 1 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
-                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+                  <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
                 </div>
                 <p className="text-xl">{currentTranslations.newLinesDescription1}</p>
               </div>
-
               {/* Línea 2 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
-                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-brain" /></span>
+                  <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-brain" /></span>
                 </div>
                 <p className="text-xl">{currentTranslations.newLinesDescription2}</p>
               </div>
-
               {/* Línea 3 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
-                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-droplet" /></span>
+                  <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-droplet" /></span>
                 </div>
                 <p className="text-xl">{currentTranslations.newLinesDescription3}</p>
               </div>
-
               {/* Línea 4 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
-                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-building-wheat" /></span>
+                  <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-building-wheat" /></span>
                 </div>
                 <p className="text-xl">{currentTranslations.newLinesDescription4}</p>
               </div>
             </div>
           </div>
-
           {/* Imagen a la izquierda */}
           <div className="md:w-1/2 p-4 flex justify-center">
             <img
@@ -213,71 +228,113 @@ const Home = () => {
 
 
       {/* Sponsor */}
-      <section className="text-center bg-gray-300 mt-10 p-6 sm:p-8 md:p-10 lg:p-12 shadow-lg">
-        <h2 className="new-theme-title">{currentTranslations.newSponsorTitle}</h2>
-        <div className="new-theme-content">
-          <div className="new-theme-image-container">
-            <a href="https://www.vliruos.be" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/images/vliruos.png"
-                alt="QR Image"
-                className="new-theme-image"
-              />
-            </a>
+      <section className="text-center bg-gray-300 p-[10vw] pt-8 pb-8 ">
+        <div className=" flex flex-col md:flex-row items-center mb-10">
+          {/* Texto a la izquierda */}
+          <div className="md:w-1/2  text-left p-4">
+            <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newSponsorTitle}</h3>
+            <br />
+            <p className="text-xl">{currentTranslations.newSponsorDescription}</p>
           </div>
-          <div className="new-theme-description">
-            <p>{currentTranslations.newSponsorDescription}</p>
+          {/* Imagen a la derecha */}
+          <div className="md:w-1/2 p-4 flex justify-center">
+            <img src="/images/vliruos.png" alt="vliruos logo" className="max-w-full h-auto rounded-lg shadow-md" />
           </div>
+          <br />
         </div>
       </section>
 
 
 
       {/* Sección de patrocinadores */}
-      <section className="sponsors-wrapper">
-        <h2>{currentTranslations.sponsorsTitle}</h2>
-        <div className="sponsors-container" style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          flexWrap: 'wrap',
-          margin: '20px 0'
-        }}>
-          {sponsors.map((sponsor) => (
-            <div className="sponsor-item" key={sponsor.name} style={{
-              textAlign: 'center',
-              margin: '10px'
-            }}>
-              <img src={sponsor.img} alt={sponsor.name} style={{
-                maxWidth: '100px',
-                height: 'auto'
-              }} />
-              <h3>{sponsor.name}</h3>
+      <section className="text-center p-[10vw] pt-8 pb-8 ">
+        <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee space-x-8">
+            {/* Duplicamos el contenedor de las imágenes para crear el loop infinito */}
+            <div className="flex space-x-8">
+              {sponsors.map((sponsor) => (
+                <div className="text-center mx-4" key={sponsor.name}>
+                  <img
+                    src={sponsor.img}
+                    alt={sponsor.name}
+                    className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48 h-auto object-contain mx-auto"
+                  />
+                  <h3>{sponsor.name}</h3>
+                </div>
+              ))}
             </div>
-          ))}
+            {/* Repetimos las imágenes para lograr el ciclo de movimiento */}
+            <div className="flex space-x-8">
+              {sponsors.map((sponsor) => (
+                <div className="text-center mx-4" key={sponsor.name}>
+                  <img
+                    src={sponsor.img}
+                    alt={sponsor.name}
+                    className="w-20  sm:w-24 md:w-32 lg:w-40 xl:w-48 h-auto object-contain mx-auto"
+                  />
+                  <h3>{sponsor.name}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
+
+
+
       {/* Contenedor de los miembros del equipo */}
-      <section className="team-wrapper">
-        <h2>{currentTranslations.teamTitle}</h2>
-        <div className="team-container">
-          {teamMembers.map((member) => (
-            <div className="team-member" key={member.name}>
-              <img src={member.img} alt={member.name} className="team-image-main" />
-              {member.img2 && <img src={member.img2} alt={`${member.name} - Extra`} className="team-image-second" />}
-              <h3 className="team-name">{member.name}</h3>
-              <p className="team-info">
-                {currentTranslations.teamMembers[member.name]} {/* Información traducida */}
-              </p>
-              {member.linkedIn && (
-                <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" className="linkedin-link">
-                  <FaLinkedin size={24} color="#0e76a8" />
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
+      <section className="text-center p-[10vw] bg-gray-300">
+        <h2 className="text-3xl font-bold text-center my-8">{currentTranslations.teamTitle}</h2>
+        <Swiper
+        modules={[Navigation, Pagination]} 
+        spaceBetween={30}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        }}
+        loop={true}
+        pagination={{ clickable: true }} 
+        navigation={true} 
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+      >
+        {teamMembers.map((member) => (
+          <SwiperSlide key={member.name}>
+            <OurTeamCard 
+              member={member}
+              translation={currentTranslations.teamMembers[member.name]} // Pasamos la info traducida
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       </section>
+
+
+      {/* Contenedor de ultimas noticias */}
+      <section className="text-center p-[10vw] pt-8 pb-8 ">
+        <h2 className="text-5xl font-bold mb-8">Últimas noticias</h2>
+
+
+      </section>
+
+
+
     </div>
   );
 };

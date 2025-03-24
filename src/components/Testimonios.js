@@ -1,4 +1,3 @@
-/*VENTANA DE CONFIGURACION - QUE HACEMOS? */ 
 import React, { useContext } from 'react';
 import './styles/Testimonios.css'; 
 import { LanguageContext } from './context/LanguageContext'; 
@@ -6,7 +5,7 @@ import { LanguageContext } from './context/LanguageContext';
 function Testimonios() {
   const { language, translations } = useContext(LanguageContext);
   
-  const testimoniosData = [
+  const testimoniosData = [ 
     {
       id: 1,
       title: translations[language].testimonios.title1,
@@ -40,15 +39,55 @@ function Testimonios() {
   ];
 
   return (
-    <div className="testimonios-container">
-      {testimoniosData.map(testimonio => (
-        <div key={testimonio.id} className="testimonio-card">
-          <img src={testimonio.image} alt={testimonio.title} className="testimonio-image" />
-          <h3 className="testimonio-title">{testimonio.title}</h3>
-          <p className="testimonio-content">{testimonio.content}</p>
-        </div>
-      ))}
-    </div>
+    <section className="text-center  pt-8 pb-8">
+      <h2 className="text-5xl font-bold mb-8">{translations[language].testimonios.sectionTitle}</h2>
+      
+      <div className="flex flex-col space-y-8">
+        {testimoniosData.map((testimonio, index) => (
+          <div 
+            key={testimonio.id} 
+            className={`flex p-[10vw] flex-col md:flex-row items-center mb-10 ${index % 2 === 0 ? 'bg-transparent' : 'bg-gray-300'}`}
+          >
+            {/* Alternar la posición del texto y la imagen */}
+            {index % 2 === 0 ? (
+              <>
+                {/* Texto a la izquierda */}
+                <div className="md:w-1/2 text-left p-4">
+                  <h3 className="text-3xl font-semibold mb-4">{testimonio.title}</h3>
+                  <p className="text-xl text-gray-700">{testimonio.content}</p>
+                </div>
+
+                {/* Imagen a la derecha */}
+                <div className="md:w-1/2 p-4 flex justify-center"> 
+                  <img 
+                    src={testimonio.image} 
+                    alt={testimonio.title} 
+                    className="max-w-full h-auto rounded-lg shadow-md"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Imagen a la izquierda */}
+                <div className="md:w-1/2 p-4 flex justify-center"> 
+                  <img 
+                    src={testimonio.image} 
+                    alt={testimonio.title} 
+                    className="max-w-full h-auto rounded-lg shadow-md"
+                  />
+                </div>
+
+                {/* Texto a la derecha */}
+                <div className="md:w-1/2 text-left p-4">
+                  <h3 className="text-3xl font-semibold mb-4">{testimonio.title}</h3>
+                  <p className="text-xl text-gray-700">{testimonio.content}</p>
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
