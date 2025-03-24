@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LanguageContext } from './context/LanguageContext';
 import CarouselImg from './CarouselImg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from '@material-tailwind/react';
 import './styles/Home.css';
 
 const images = [
@@ -105,49 +107,113 @@ const Home = () => {
   const currentTranslations = translations[language];
 
   return (
-    <div className="mt-10" >
+    <div className="mt-5 mb-5" >
       {/* Contenedor del carrusel */}
-      <CarouselImg images={images} />
-      
+      <section className="text-center  p-[5vw]">
+        <CarouselImg images={images} />
+      </section>
+
       {/* Sección principal del proyecto */}
-      <section className="tech-intro">
+      <section className="text-center bg-gray-300 mt-10 mb-10  p-[10vw] shadow-lg">
         <h1 style={{ textTransform: 'uppercase' }}>
-          {currentTranslations.mainTitle}
+          {/*currentTranslations.mainTitle*/}
         </h1>
-
-        <p>{currentTranslations.projectDescription}</p>
-      </section>
-
-      {/* Nueva Sección con Título, Imagen y Descripción */}
-      <section className="new-theme-section">
-        <h2 className="new-theme-title">{currentTranslations.newThemeTitle}</h2>
-        <div className="new-theme-content">
-          <img
-            src="/images/qr_info1.png"  // QR modificale y redirreccion URL
-            alt="qr-images"
-            className="new-theme-image"
-          />
-          <div className="new-theme-description">
-            <p>{currentTranslations.newThemeDescription}</p>
+        <p className="mt-4 text-xl  ">{currentTranslations.projectDescription}</p>
+        <div className="flex flex-wrap justify-center gap-10 mt-6 text-light-green-800 text-6xl sm:text-4xl md:text-5xl">
+          <div className="text-center flex-1 min-w-[120px]">
+            <FontAwesomeIcon icon="fa-solid fa-desktop" />
+            <p className="text-xl mt-2">Monitoreo remoto</p>
+          </div>
+          <div className="text-center flex-1 min-w-[120px]">
+            <FontAwesomeIcon icon="fa-solid fa-robot" />
+            <p className="text-xl mt-2"> Inteligencia Artificial</p>
+          </div>
+          <div className="text-center flex-1 min-w-[120px]">
+            <FontAwesomeIcon icon="fa-solid fa-chart-line" />
+            <p className="text-xl mt-2">Análisis de datos</p>
           </div>
         </div>
+
       </section>
-      
-      {/* Nueva Sección Líneas de Investigación */}
-      <section className="new-theme-section">
-        <h2 className="new-theme-title">{currentTranslations.newLines}</h2>
-        <div className="new-theme-content">
-          <div>
-            <p>{currentTranslations.newLinesDescription1}</p>
-            <p>{currentTranslations.newLinesDescription2}</p>
-            <p>{currentTranslations.newLinesDescription3}</p>
-            <p>{currentTranslations.newLinesDescription4}</p>
+
+      {/* Nueva Sección Sobre el proyecto */}
+      <section className="text-center  p-[5vw]  ">
+        <h2 className="text-5xl font-bold mb-8">Sobre el proyecto</h2>
+        {/* Sección de Objetivos */}
+        <div className="flex flex-col md:flex-row items-center mb-10">
+          {/* Texto a la izquierda */}
+          <div className="md:w-1/2  text-left p-4">
+            <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newThemeTitle}</h3>
+            <p className="text-xl">{currentTranslations.newThemeDescription}
+              <br />
+              <br />
+              <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
+                ¿Cómo lo hacemos?
+              </Button>
+            </p>
+          </div>
+          {/* Imagen a la derecha */}
+          <div className="md:w-1/2 p-4 flex justify-center">
+            <img src="/images/postal.jpeg" alt="Objetivos del Proyecto" className="max-w-full h-auto rounded-lg shadow-md" />
           </div>
         </div>
+        <br />
+
+        {/* Sección de Líneas de Investigación */}
+        <div className="flex flex-col md:flex-row-reverse items-center">
+          <div className="md:w-1/2 text-left p-4">
+            <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newLines}</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Línea 1 */}
+              <div className="flex items-center">
+                <div className="w-8 h-8 flex items-center justify-center mr-4">
+                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+                </div>
+                <p className="text-xl">{currentTranslations.newLinesDescription1}</p>
+              </div>
+
+              {/* Línea 2 */}
+              <div className="flex items-center">
+                <div className="w-8 h-8 flex items-center justify-center mr-4">
+                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-brain" /></span>
+                </div>
+                <p className="text-xl">{currentTranslations.newLinesDescription2}</p>
+              </div>
+
+              {/* Línea 3 */}
+              <div className="flex items-center">
+                <div className="w-8 h-8 flex items-center justify-center mr-4">
+                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-droplet" /></span>
+                </div>
+                <p className="text-xl">{currentTranslations.newLinesDescription3}</p>
+              </div>
+
+              {/* Línea 4 */}
+              <div className="flex items-center">
+                <div className="w-8 h-8 flex items-center justify-center mr-4">
+                  <span className="text-light-green-800 text-4xl"><FontAwesomeIcon icon="fa-solid fa-building-wheat" /></span>
+                </div>
+                <p className="text-xl">{currentTranslations.newLinesDescription4}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Imagen a la izquierda */}
+          <div className="md:w-1/2 p-4 flex justify-center">
+            <img
+              src="/images/drone_1.jpg"
+              alt="Líneas de Investigación"
+              className="max-w-full h-auto rounded-lg shadow-md [mask-image:linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,0))]"
+            />
+          </div>
+        </div>
+
       </section>
+
 
       {/* Sponsor */}
-      <section className="new-theme-section">
+      <section className="text-center bg-gray-300 mt-10 p-6 sm:p-8 md:p-10 lg:p-12 shadow-lg">
         <h2 className="new-theme-title">{currentTranslations.newSponsorTitle}</h2>
         <div className="new-theme-content">
           <div className="new-theme-image-container">
@@ -165,7 +231,7 @@ const Home = () => {
         </div>
       </section>
 
-      
+
 
       {/* Sección de patrocinadores */}
       <section className="sponsors-wrapper">
