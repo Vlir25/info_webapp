@@ -14,6 +14,10 @@ import LoadingScreen from './components/LoadingScreen';
 import { SpeedInsights } from '@vercel/speed-insights/react'; // Importa el componente SpeedInsights
 import './App.css';
 
+
+
+
+
 const App = () => {
   console.log("✅ThemeProvider está envolviendo la app");
 
