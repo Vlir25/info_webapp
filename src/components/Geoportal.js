@@ -9,7 +9,7 @@ import OpenAI from "openai"; // Importa la biblioteca OpenAI
 import MarkdownRenderer from "./MarkdownRenderer"; // Importa el componente MarkdownRenderer
 
 const Geoportal = () => {
-  const { language } = useContext(LanguageContext);
+  useContext(LanguageContext);
   const [hasAccess, setHasAccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -33,20 +33,6 @@ const Geoportal = () => {
     fetchAPIKey();
     }, []);
   
-  const translations = {
-    es: {
-      geoportal: "Geoportal",
-      description:
-        "Geoportal es una herramienta digital diseñada para supervisar tus cultivos de manera eficiente. Con nuestra aplicación, puedes monitorear el estado de tus cultivos, realizar un seguimiento detallado y optimizar tus prácticas agrícolas con información precisa y actualizada.",
-      testVersion: "Acceder a versión de prueba",
-    },
-    en: {
-      geoportal: "Geoportal",
-      description:
-        "Geoportal is a digital tool designed to efficiently monitor your crops. With our application, you can track the status of your crops, keep detailed records, and optimize your agricultural practices with accurate and up-to-date information.",
-      testVersion: "Access trial version",
-    },
-  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;

@@ -5,8 +5,8 @@ import { LanguageProvider } from './components/context/LanguageContext'; // Impo
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Testimonios from './components/Testimonios';
-import Novedades from './components/Noticias';
+import Hacemos from './components/Testimonios';
+import Noticias from './components/Noticias';
 import Geoportal from './components/Geoportal';
 import NoticiaDetalle from './components/NoticiasDetalle';
 import Contactos from './components/Contactos'; // Importa el componente Contactos
@@ -43,8 +43,9 @@ const App = () => {
               <main>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/noticias" element={<Novedades />} />
-                  <Route path="/testimonio" element={<Testimonios />} />
+                  <Route path="/noticias" element={<Noticias />} />
+                  <Route path="/inicio" element={<Home />} />
+                  <Route path="/que-hacemos" element={<Hacemos />} />
                   <Route path="/geoportal" element={<Geoportal />} />
                   <Route path="/noticia/:noticiaId" element={<NoticiaDetalle />} />
                   <Route path="/contactos" element={<Contactos />} />

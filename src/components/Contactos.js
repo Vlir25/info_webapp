@@ -1,144 +1,58 @@
 import React from 'react';
 import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
-
+import { FaLocationArrow, FaEnvelope, FaPhone } from 'react-icons/fa';  // Usando react-icons para los íconos
 
 const Contactos = () => {
   return (
-    <section className="px-8 py-8 lg:py-16">
-      <div className="container mx-auto text-center">
-        <Typography
-          variant="h5"
-          color="blue-gray"
-          className="mb-4 !text-base lg:!text-2xl"
-        >
-          Customer Care
-        </Typography>
-        <Typography
-          variant="h1"
-          color="blue-gray"
-          className="mb-4 !text-3xl lg:!text-5xl"
-        >
-          We&apos;re Here to Help
-        </Typography>
-        <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
-          Whether it&apos;s a question about our services, a request for
-          technical assistance, or suggestions for improvement, our team is
-          eager to hear from you.
-        </Typography>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
-          <img
-            src="/image/map.svg"
-            alt="map"
-            className="w-full h-full lg:max-h-[510px]"
-          />
-          <form
-            action="#"
-            className="flex flex-col gap-4 lg:max-w-sm"
-          >
-            <Typography
-              variant="small"
-              className="text-left !font-semibold !text-gray-600"
-            >
-              Select Options for Business Engagement
-            </Typography>
-            <div className="flex gap-4">
-              <Button variant="outlined" className="max-w-fit">
-                General inquiry
-              </Button>
-              <Button variant="outlined" className="max-w-fit">
-                Product Support
-              </Button>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+    <section id="sobre-el-proyecto" className="text-center p-[10vw] pt-8 pb-8">
+      <h3 className="text-left text-5xl font-bold mb-10">Contáctanos</h3>
+      <div className="container mx-auto">
+        {/* Información de contacto */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-60">
+          {/* Columna izquierda con iconos y datos */}
+          <div className="space-y-7">
+            <div className="flex flex-col items-center space-y-2">
+              <FaLocationArrow className="text-3xl text-gray-700" />
               <div>
-                <Typography
-                  variant="small"
-                  className="mb-2 text-left font-medium !text-gray-900"
-                >
-                  First Name
-                </Typography>
-                <Input
-                  color="gray"
-                  size="lg"
-                  placeholder="First Name"
-                  name="first-name"
-                  className="focus:border-t-gray-900"
-                  containerProps={{
-                    className: "min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
-                />
-              </div>
-              <div>
-                <Typography
-                  variant="small"
-                  className="mb-2 text-left font-medium !text-gray-900"
-                >
-                  Last Name
-                </Typography>
-                <Input
-                  color="gray"
-                  size="lg"
-                  placeholder="Last Name"
-                  name="last-name"
-                  className="focus:border-t-gray-900"
-                  containerProps={{
-                    className: "!min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
-                />
+                <Typography className="font-medium text-gray-900">Ubicación</Typography>
+                <Typography className="text-gray-600">1234 Calle Ficticia, Ciudad, País</Typography>
               </div>
             </div>
-            <div>
-              <Typography
-                variant="small"
-                className="mb-2 text-left font-medium !text-gray-900"
-              >
-                Your Email
-              </Typography>
-              <Input
-                color="gray"
-                size="lg"
-                placeholder="name@email.com"
-                name="email"
-                className="focus:border-t-gray-900"
-                containerProps={{
-                  className: "!min-w-full",
-                }}
-                labelProps={{
-                  className: "hidden",
-                }}
-              />
+
+            <div className="flex flex-col items-center space-y-2">
+              <FaEnvelope className="text-3xl text-gray-700" />
+              <div>
+                <Typography className="font-medium text-gray-900">Correo Electrónico</Typography>
+                <Typography className="text-gray-600">contacto@empresa.com</Typography>
+              </div>
             </div>
-            <div>
-              <Typography
-                variant="small"
-                className="mb-2 text-left font-medium !text-gray-900"
-              >
-                Your Message
-              </Typography>
-              <Textarea
-                rows={6}
-                color="gray"
-                placeholder="Message"
-                name="message"
-                className="focus:border-t-gray-900"
-                containerProps={{
-                  className: "!min-w-full",
-                }}
-                labelProps={{
-                  className: "hidden",
-                }}
-              />
+
+            <div className="flex flex-col items-center space-y-2">
+              <FaPhone className="text-3xl text-gray-700" />
+              <div>
+                <Typography className="font-medium text-gray-900">Teléfono</Typography>
+                <Typography className="text-gray-600">+123 456 7890</Typography>
+              </div>
             </div>
-            <Button className="w-full" color="gray">
-              Send message
-            </Button>
-          </form>
+          </div>
+
+          {/* Columna derecha con imagen y mapa */}
+          <div className="space-y-6">
+            <img
+              src="/images/qr_info1.png" // Imagen del mapa
+              alt="map"
+              className="w-full h-64 object-cover rounded-lg"
+            />
+            <div className="w-full h-64 bg-gray-300 rounded-lg">
+              {/* Aquí puedes agregar un iframe de Google Maps o usar Leaflet */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7916475407933!2d-78.49246472503539!3d-0.20950559978843042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a10f313d0db%3A0xb062938f8ea3983c!2sFacultad%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20EPN!5e0!3m2!1ses-419!2sec!4v1742864091473!5m2!1ses-419!2sec"
+                className="w-full h-full border-0 rounded-lg"
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </section>

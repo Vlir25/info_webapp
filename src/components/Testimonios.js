@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './styles/Testimonios.css'; 
 import { LanguageContext } from './context/LanguageContext'; 
 
-function Testimonios() {
+function Hacemos() {
   const { language, translations } = useContext(LanguageContext);
   
   const testimoniosData = [ 
@@ -91,4 +91,4 @@ function Testimonios() {
   );
 }
 
-export default Testimonios;
+export default Hacemos;

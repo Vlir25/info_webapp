@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import { LanguageContext } from './context/LanguageContext';
 import CarouselImg from './CarouselImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,11 +16,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { noticiasData } from './Noticiasdata'; // Importar datos
+import UltimasNoticias from './UltimasNoticias'; // Importar component
+
 
 
 const images = [
   {
-    src: "/images/principal.png",
+    src: "/images/monitoreo.jpeg",
     alt: "Imagen principal 1",
     title: "Agricultura Inteligente para un futuro sostenible",
     description: "Transformando la producción agrícola mediante tecnología avanzada.",
@@ -30,7 +35,7 @@ const images = [
     description: "Soluciones avanzadas para un mundo en constante cambio.",
   },
   {
-    src: "/images/monitoreo.jpeg",
+    src: "/images/principal.png",
     alt: "Monitoreo Inteligente",
     title: "Monitoreo en tiempo real",
     description: "Controla tus procesos con nuestra plataforma digital.",
@@ -122,14 +127,15 @@ const Home = () => {
   const currentTranslations = translations[language];
 
   return (
-    <div className="mt-5 mb-5" >
+    <div className="" >
       {/* Contenedor del carrusel */}
-      <section className="text-center  p-[5vw]">
+      <section className="relative w-full mx-auto text-center">
         <CarouselImg images={images} />
       </section>
 
+
       {/* Sección principal del proyecto */}
-      <section className="text-center bg-gray-300 mt-8 mb-8  p-[10vw] pt-8 pb-8 shadow-lg">
+      <section className="text-center bg-gray-300  p-[10vw] pt-8 pb-8 shadow-lg">
         <h1 style={{ textTransform: 'uppercase' }}>
           {/*currentTranslations.mainTitle*/}
         </h1>
@@ -152,7 +158,7 @@ const Home = () => {
       </section>
 
       {/* Nueva Sección Sobre el proyecto */}
-      <section className="text-center  p-[10vw] pt-8 pb-8 ">
+      <section id="sobre-el-proyecto" className="text-center  p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">Sobre el proyecto</h2>
 
         {/* Sección de Objetivos */}
@@ -167,7 +173,9 @@ const Home = () => {
               <br />
               <br />
               <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
-                ¿Cómo lo hacemos?
+                <Link to="/que-hacemos"  className="text-white">
+                  ¿Cómo lo hacemos?
+                </Link>
               </Button>
             </p>
           </div>
@@ -285,43 +293,43 @@ const Home = () => {
 
 
       {/* Contenedor de los miembros del equipo */}
-      <section className="text-center p-[10vw] bg-gray-300">
-        <h2 className="text-3xl font-bold text-center my-8">{currentTranslations.teamTitle}</h2>
+      <section className="text-center p-[10vw] bg-gray-300 pt-8 pb-8 ">
+        <h2 className="text-5xl font-bold mb-8">{currentTranslations.teamTitle}</h2>
         <Swiper
-        modules={[Navigation, Pagination]} 
-        spaceBetween={30}
-        slidesPerView={1}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-        }}
-        loop={true}
-        pagination={{ clickable: true }} 
-        navigation={true} 
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-      >
-        {teamMembers.map((member) => (
-          <SwiperSlide key={member.name}>
-            <OurTeamCard 
-              member={member}
-              translation={currentTranslations.teamMembers[member.name]} // Pasamos la info traducida
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          modules={[Navigation, Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+          loop={true}
+          pagination={{ clickable: true }}
+          navigation={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+        >
+          {teamMembers.map((member) => (
+            <SwiperSlide key={member.name}>
+              <OurTeamCard
+                member={member}
+                translation={currentTranslations.teamMembers[member.name]} // Pasamos la info traducida
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
       </section>
 
@@ -329,6 +337,10 @@ const Home = () => {
       {/* Contenedor de ultimas noticias */}
       <section className="text-center p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">Últimas noticias</h2>
+        <div>
+          {/* Pasar noticiasData como prop al componente UltimasNoticias */}
+          <UltimasNoticias noticiasData={noticiasData} />
+        </div>
 
 
       </section>

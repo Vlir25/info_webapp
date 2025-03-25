@@ -2,28 +2,9 @@ import React, { useContext, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LanguageContext } from '../components/context/LanguageContext'; // Asegúrate de importar el LanguageContext
 import { Typography } from "@material-tailwind/react";
+import { Link } from 'react-router-dom';
 
 import './styles/Footer.css';
-
-const LINKS = [
-  {
-    title: "Product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
-  },
-  {
-    title: "Company",
-    items: ["About us", "Careers", "Press", "News"],
-  },
-  {
-    title: "Resource",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
-  },
-];
-
-const currentYear = new Date().getFullYear();
-
-
-
 
 
 const Footer = () => {
@@ -68,36 +49,7 @@ const Footer = () => {
     }
   };
 
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
 
-  const copyEmailToClipboard = async (e) => {
-    e.preventDefault();
-
-    try {
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(email);
-        setCopyMessage(texts[language].copyMessage + email);
-      } else {
-        const textArea = document.createElement('textarea');
-        textArea.value = email;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        setCopyMessage(texts[language].copyMessage + email);
-      }
-
-      setTimeout(() => setCopyMessage(''), 2000);
-      window.location.href = `mailto:${email}`;
-    } catch (err) {
-      console.error('Error al copiar el correo: ', err);
-    }
-  };
 
   return (
     <footer className="relative w-full bg-gray-900 text-white py-8">
@@ -141,16 +93,16 @@ const Footer = () => {
             <Typography variant="h6" className="mb-3">Enlaces Rápidos</Typography>
             <ul className="space-y-2 text-left">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Inicio</a>
+                <Link to="/" className="text-gray-400 hover:text-white">Inicio</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Qué Hacemos</a>
+                <Link to="/que-hacemos" className="text-gray-400 hover:text-white">Qué Hacemos</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Noticias</a>
+                <Link to="/noticias" className="text-gray-400 hover:text-white">Noticias</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">Geoportal</a>
+                <Link to="/geoportal" className="text-gray-400 hover:text-white">Geoportal</Link>
               </li>
             </ul>
 
@@ -177,7 +129,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Smart Farming. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} ATA. Todos los derechos reservados.
         </div>
       </div>
     </footer>

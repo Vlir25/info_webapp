@@ -72,9 +72,7 @@ footer h2 {
 
 /* Ajustes responsivos */
 @media (max-width: 1024px) {
-    main {
-        padding: 1.5rem; /* Ajusta el padding para tabletas */
-    }
+
 
     footer {
         font-size: 0.9rem; /* Tamaño de fuente más pequeño para pantallas más pequeñas */

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import { Carousel, IconButton, Typography, Button } from "@material-tailwind/react";
 
 const CarouselImg = ({ images }) => {
@@ -6,9 +8,8 @@ const CarouselImg = ({ images }) => {
     <div className="flex justify-center items-center w-full">
       <Carousel
         transition={{ duration: 2 }}
-        autoplay={true}
         loop={true}
-        className="w-[90%] max-w-[1200px] h-[500px] overflow-hidden rounded-xl shadow-lg"
+        className="w-full h-auto overflow-hidden shadow-lg"
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"
@@ -50,12 +51,12 @@ const CarouselImg = ({ images }) => {
         )}
       >
         {images.map((image, index) => (
-          <div key={index} className="relative w-full h-[500px]">
+          <div key={index} className="relative w-full h-[650px] sm:h-[400px] md:h-[500px] lg:h-[650px]">
             {/* Imagen de fondo */}
             <img
               src={image.src}
               alt={image.alt || `Imagen ${index + 1}`}
-              className="absolute inset-0 w-full h-full object-cover rounded-xl"
+              className="absolute inset-0 w-full h-full object-cover"
             />
 
             {/* Contenedor de texto alineado a la derecha */}
@@ -78,7 +79,9 @@ const CarouselImg = ({ images }) => {
 
               {index === 0 && (
                 <Button size="md" className=" bg-primary hover:bg-green-700" >
+                  <Link to="/que-hacemos"  className="text-white">
                   Conoce más
+                  </Link>
                 </Button>
               )}
             </div>

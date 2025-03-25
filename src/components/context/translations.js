@@ -2,7 +2,7 @@ const translations = {
   es: {
     // Traducción de elementos en el navbar (barra de navegación)
     navbar: {
-      title: "Título",            // Título en la barra de navegación
+      title: "Inicio",            // Título en la barra de navegación
       option1: "Sobre el proyecto",     // Opción 1 en el navbar
       option2: "¿Qué hacemos?",   // Opción 2 en el navbar
       news: "Noticias",           // Opción de noticias en el navbar
@@ -13,7 +13,7 @@ const translations = {
     mainTitle: "Agricultura Inteligente para un Futuro Sostenible",
 
     // Descripción del proyecto
-    projectDescription: "Es una iniciativa que busca revolucionar la producción agrícola a través del uso de tecnologías avanzadas. Nuestro enfoque combina monitoreo remoto, inteligencia artificial y análisis de datos para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
+    projectDescription: "Es una iniciativa que busca revolucionar la producción agrícola a través del uso de tecnologías avanzadas. Nuestro enfoque combina: monitoreo remoto, inteligencia artificial y análisis de datos para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
 
     newThemeTitle: "Objetivo Principal",
     newThemeDescription: "Desarrollar e implementar un modelo de agricultura inteligente que permita mejorar la productividad del cultivo de pitahaya, optimizar el uso de recursos y evaluar el impacto social y económico en la reducción de la pobreza y la desigualdad.",
