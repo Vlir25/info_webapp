@@ -31,8 +31,8 @@ const Geoportal = () => {
       setApiKey(key);
     }
     fetchAPIKey();
-    }, []);
-  
+  }, []);
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -85,47 +85,48 @@ const Geoportal = () => {
     } finally {
       setIsLoading(false);
     }
-  }; 
-  
+  };
+
   if (!hasAccess) {
     return (
       <div className="home-container">
-        <h2>Regístrate para acceder al Geoportal</h2>
-<form onSubmit={handleSubmit} className="tech-intro space-y-4 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
-  <div className="flex flex-col">
-    <label className="font-semibold text-gray-700">Nombre:</label>
-    <input type="text" name="name" value={formData.name} onChange={handleChange} required 
-      className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"/>
-  </div>
+        <h2 className="text-4xl font-bold p-[10vw] pt-8 pb-8 m-auto">Regístrate para acceder al Geoportal</h2>
 
-  <div className="flex flex-col">
-    <label className="font-semibold text-gray-700">Email:</label>
-    <input type="email" name="email" value={formData.email} onChange={handleChange} required 
-      className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"/>
-  </div>
+        <form onSubmit={handleSubmit} className="tech-intro space-y-4 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+          <div className="flex flex-col">
+            <label className="font-semibold text-gray-700">Nombre:</label>
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required
+              className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
 
-  <div className="flex flex-col">
-    <label className="font-semibold text-gray-700">Teléfono:</label>
-    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required 
-      className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"/>
-  </div>
+          <div className="flex flex-col">
+            <label className="font-semibold text-gray-700">Email:</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required
+              className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
 
-  <div className="flex flex-col">
-    <label className="font-semibold text-gray-700">Ciudad:</label>
-    <input type="text" name="city" value={formData.city} onChange={handleChange} required 
-      className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"/>
-  </div>
+          <div className="flex flex-col">
+            <label className="font-semibold text-gray-700">Teléfono:</label>
+            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required
+              className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
 
-  <div className="flex items-center gap-2">
-    <input type="checkbox" name="interested" checked={formData.interested} onChange={handleChange} 
-      className="h-5 w-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"/>
-    <label className="text-gray-700">¿Te gustaría vincularte a la comunidad?</label>
-  </div>
+          <div className="flex flex-col">
+            <label className="font-semibold text-gray-700">Ciudad:</label>
+            <input type="text" name="city" value={formData.city} onChange={handleChange} required
+              className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
 
-  <button type="submit" className="w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
-    Enviar
-  </button>
-</form>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" name="interested" checked={formData.interested} onChange={handleChange}
+              className="h-5 w-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500" />
+            <label className="text-gray-700">¿Te gustaría vincularte a la comunidad?</label>
+          </div>
+
+          <button type="submit" className="w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
+            Enviar
+          </button>
+        </form>
 
       </div>
     );

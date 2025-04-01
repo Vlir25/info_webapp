@@ -70,7 +70,8 @@ const Footer = () => {
               {/* Teléfono */}
               <div className="relative flex flex-col items-center">
                 <a href="tel:+593999999999" className="font-medium text-lg">
-                  (+593) 99-999-9999
+                  (+593) 99-664-5322
+ 
                 </a>
                 <span className="w-full h-0.5 bg-green-500 mt-1"></span>
               </div>
@@ -81,7 +82,7 @@ const Footer = () => {
               {/* Correo */}
               <div className="relative flex flex-col items-center">
                 <a href="mailto:vlir2025@gmail.com" className="font-medium text-lg">
-                  vlir2025@gmail.com
+                ata.rg@epn.edu.ec
                 </a>
                 <span className="w-full h-0.5 bg-green-500 mt-1"></span>
               </div>
@@ -111,7 +112,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/ATAResearch" className="text-gray-400 hover:text-white">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://x.com/AtaResearch" className="text-gray-400 hover:text-white">
                 <i className="fab fa-twitter"></i>
               </a>
               <a href="https://www.instagram.com/ata_research_group/" className="text-gray-400 hover:text-white">

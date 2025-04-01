@@ -5,7 +5,7 @@ import { FaLocationArrow, FaEnvelope, FaPhone } from 'react-icons/fa';  // Usand
 const Contactos = () => {
   return (
     <section id="sobre-el-proyecto" className="text-center p-[10vw] pt-8 pb-8">
-      <h3 className="text-left text-5xl font-bold mb-10">Contáctanos</h3>
+      <h2 className="text-4xl font-bold m-auto">Contáctanos</h2>
       <div className="container mx-auto">
         {/* Información de contacto */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-60">
@@ -15,7 +15,7 @@ const Contactos = () => {
               <FaLocationArrow className="text-3xl text-gray-700" />
               <div>
                 <Typography className="font-medium text-gray-900">Ubicación</Typography>
-                <Typography className="text-gray-600">Facultad de Ingenieria Mecanica, EPN <br/> (Quito, Ecuador)</Typography>
+                <Typography className="text-gray-600">Grupo de investigación ATA-EPN,<br/> Laboratorio de UAVs,<br/> EPN <br/> (Quito, Ecuador)</Typography>
               </div>
             </div>
 
@@ -23,7 +23,7 @@ const Contactos = () => {
               <FaEnvelope className="text-3xl text-gray-700" />
               <div>
                 <Typography className="font-medium text-gray-900">Correo Electrónico</Typography>
-                <Typography className="text-gray-600">contacto@empresa.com</Typography>
+                <Typography className="text-gray-600">ata.rg@epn.edu.ec <br/> esteban.valencia@epn.edu.ec</Typography>
               </div>
             </div>
 
@@ -31,7 +31,8 @@ const Contactos = () => {
               <FaPhone className="text-3xl text-gray-700" />
               <div>
                 <Typography className="font-medium text-gray-900">Teléfono</Typography>
-                <Typography className="text-gray-600">+123 456 7890</Typography>
+                <Typography className="text-gray-600">+593 996 645 322
+                </Typography>
               </div>
             </div>
           </div>
@@ -46,7 +47,7 @@ const Contactos = () => {
             <div className="w-full h-64 bg-gray-300 rounded-lg">
               {/* Aquí puedes agregar un iframe de Google Maps o usar Leaflet */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7916475407933!2d-78.49246472503539!3d-0.20950559978843042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a10f313d0db%3A0xb062938f8ea3983c!2sFacultad%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%20EPN!5e0!3m2!1ses-419!2sec!4v1742864091473!5m2!1ses-419!2sec"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.7239407635828!2d-78.49039777311624!3d-0.2099819623676055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b577bc46049%3A0x42f5b4b580f52ed5!2sGrupo%20de%20investigaci%C3%B3n%20ATA-EPN%2C%20Laboratorio%20de%20UAVs!5e0!3m2!1ses!2sec!4v1743509042380!5m2!1ses!2sec"
                 className="w-full h-full border-0 rounded-lg"
                 allowFullScreen=""
                 loading="lazy"
