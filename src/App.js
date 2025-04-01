@@ -12,6 +12,7 @@ import NoticiaDetalle from './components/NoticiasDetalle';
 import Contactos from './components/Contactos'; // Importa el componente Contactos
 import LoadingScreen from './components/LoadingScreen';
 import { SpeedInsights } from '@vercel/speed-insights/react'; // Importa el componente SpeedInsights
+import CookieBanner from './components/CookieBanner'; // Importa el componente CookieBanner
 import './App.css';
 
 
@@ -51,8 +52,8 @@ const App = () => {
                   <Route path="/contactos" element={<Contactos />} />
                   <Route path="*" element={<Home />} />
                 </Routes>
+                <CookieBanner />
                 {/* Agregar SpeedInsights en un lugar específico de la interfaz */}
-                <SpeedInsights />
               </main>
               <Footer />
             </>
