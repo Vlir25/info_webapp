@@ -26,7 +26,7 @@ const translations = {
     // Títulos de las secciones de patrocinadores y gestión
     sponsorsTitle: "Entidades participantes",
    
-    newSponsorTitle: "Auspiciante",
+    newSponsorTitle: "📢 Auspiciante",
     newSponsorDescription: "El desarrollo de este proyecto ha sido posible gracias al apoyo de VLIR-UOS a través de un Short Initiative, un programa que impulsa la cooperación académica entre instituciones de Bélgica y países en desarrollo. Este financiamiento ha permitido la integración de tecnología avanzada en la agricultura, promoviendo el uso de inteligencia artificial, monitoreo remoto y procesamiento de datos multiespectrales para mejorar la productividad y sostenibilidad de los cultivos. Nuestro compromiso es generar un impacto positivo en el sector agrícola, contribuyendo a la innovación y fortaleciendo las capacidades locales mediante investigación aplicada y colaboración internacional.",
     // Títulos de la galería y del equipo
 
@@ -56,16 +56,16 @@ const translations = {
 
     // Traducción de testimonios
     testimonios: {
-      title1: "📋 Planificación de la misión",
-      content1: "Se analizan las necesidades del cultivo y se establecen los objetivos del monitoreo. Se determinan las áreas estratégicas de observación y se programan monitoreos periódicos para obtener los datos.",
-      title2: "📍 Identificación de puntos clave",
-      content2: "Se seleccionan ubicaciones estratégicas dentro del cultivo para la recolección de datos. Se consideran factores como el estado de las plantas, la variabilidad del terreno y el acceso a las áreas críticas. Esto para tener una muestra representativa y suficiente para evaluar constantemente el cultivo.",
-      title3: "🚁 Registro y monitoreo",
-      content3: "Se realizan vuelos periódicos según la planificación inicial, para esto se usan drones equipados con sensores multiespectrales. Se capturan imágenes de alta resolución que permiten evaluar el estado del cultivo y detectar posibles problemas a tiempo.",
-      title4: "🖥️ Procesamiento y análisis de datos",
-      content4: "Se utilizan herramientas como QGIS e inteligencia artificial para procesar las imágenes capturadas. Se generan mapas de vegetación y otros indicadores clave que ayudan a la toma de decisiones.",
-      title5: "🤖 Implementación de agricultura inteligente",
-      content5: "Con base en el análisis de datos, se generan recomendaciones para optimizar el manejo del cultivo. Se aplican estrategias para mejorar la productividad y reducir el impacto ambiental.",
+      title1: "Análisis del cultivo y planificación del monitoreo",
+      content1: "Se evalúan las necesidades del cultivo para definir los objetivos del monitoreo. Se identifican las variables clave a observar y se establecen estrategias para un seguimiento eficiente.",
+      title2: "Reconocimiento del cultivo y puntos estratégicos",
+      content2: "Se seleccionan áreas clave considerando la distribución del cultivo, la variabilidad del terreno y el acceso a zonas críticas. Esto garantiza una recolección de datos representativa y precisa.",
+      title3: "Monitoreo con drones y captura de datos",
+      content3: "Se ejecutan vuelos planificados con drones equipados con sensores multiespectrales para capturar imágenes de alta resolución, permitiendo evaluar el estado del cultivo y detectar posibles anomalías.",
+      title4: "Procesamiento y análisis de datos",
+      content4: "Se emplean herramientas como QGIS e inteligencia artificial para analizar las imágenes capturadas. Se generan mapas e indicadores clave que facilitan la interpretación de los datos.",
+      title5: "Socialización de resultados y toma de decisiones",
+      content5: "Los hallazgos se comparten con agricultores y expertos para optimizar estrategias de manejo. Se generan recomendaciones basadas en datos para mejorar la productividad y sostenibilidad del cultivo.",
     },
 
     // Traducción de los iconos con título y descripción
@@ -119,7 +119,7 @@ const translations = {
     // Títulos de las secciones de patrocinadores y gestión
     sponsorsTitle: "Entities Involved",
 
-    newSponsorTitle: "Sponsor",
+    newSponsorTitle: "📢 Sponsor",
     newSponsorDescription: "The development of this project has been made possible thanks to the support of VLIR-UOS through a Short Initiative, a program that promotes academic cooperation between Belgian institutions and developing countries. This funding has enabled the integration of advanced technology in agriculture, fostering the use of artificial intelligence, remote monitoring, and multispectral data processing to enhance crop productivity and sustainability. Our commitment is to create a positive impact in the agricultural sector, contributing to innovation and strengthening local capacities through applied research and international collaboration.",
 
     // Títulos de la galería y del equipo
@@ -151,16 +151,16 @@ teamMembers: {
 
     // Traducción de testimonios
     testimonios: {
-      title1: "📋 Mission Planning",
-      content1: "The crop's needs are analyzed, and monitoring objectives are established. Strategic observation areas are determined, and periodic monitoring is scheduled to collect data.",
-      title2: "📍 Key Point Identification",
-      content2: "Strategic locations within the crop are selected for data collection. Factors such as plant health, terrain variability, and access to critical areas are considered. This ensures a representative and sufficient sample for continuous crop evaluation.",
-      title3: "🚁 Data Collection and Monitoring",
-      content3: "Periodic flights are conducted according to the initial plan, using drones equipped with multispectral sensors. High-resolution images are captured to assess crop conditions and detect potential issues in time.",
-      title4: "🖥️ Data Processing and Analysis",
-      content4: "Tools such as QGIS and artificial intelligence are used to process captured images. Vegetation maps and other key indicators are generated to support decision-making.",
-      title5: "🤖 Implementation of Smart Agriculture",
-      content5: "Based on data analysis, recommendations are generated to optimize crop management. Strategies are applied to improve productivity and reduce environmental impact.",
+      title1: "Crop Analysis and Monitoring Planning",
+      content1: "The crop’s needs are assessed to define monitoring objectives. Key variables to observe are identified, and strategies are established for efficient tracking.",
+      title2: "Crop Recognition and Key Points Selection",
+      content2: "Strategic areas are selected based on crop distribution, terrain variability, and access to critical zones. This ensures representative and accurate data collection.",
+      title3: "Drone Monitoring and Data Capture",
+      content3: "Planned drone flights are conducted using multispectral sensors to capture high-resolution images, enabling crop condition assessment and early anomaly detection.",
+      title4: " Data Processing and Analysis",
+      content4: "Tools like QGIS and artificial intelligence are used to analyze the captured images. Maps and key indicators are generated to facilitate data interpretation.",
+      title5: "Results Sharing and Decision-Making",
+      content5: "Findings are shared with farmers and experts to optimize management strategies. Data-driven recommendations are provided to enhance crop productivity and sustainability.",
     },
 
     // Traducción de los iconos con título y descripción
