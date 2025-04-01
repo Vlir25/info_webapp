@@ -39,9 +39,13 @@ function Hacemos() {
   ];
 
   return (
-    <section className="text-center  pt-8 pb-8">
-      <h2 className="text-5xl font-bold mb-8">{translations[language].testimonios.sectionTitle}</h2>
-      
+    <section className="text-center">
+      <div className="text-center  mt-10">
+      <h2 className="text-5xl font-bold mb-8">¿Qué hacemos?</h2>
+        <p className="mt-4 text-xl  ">Aprovechamos tecnología avanzada para optimizar la producción agrícola.
+        <br/>A través de drones, sensores multiespectrales e inteligencia artificial, analizamos el estado del cultivo y generamos estrategias para su mejor desarrollo.</p>
+      </div>
+
       <div className="flex flex-col space-y-8">
         {testimoniosData.map((testimonio, index) => (
           <div 

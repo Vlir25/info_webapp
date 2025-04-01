@@ -1,9 +1,7 @@
 import React, { useState, useContext, memo, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';  // Agregado useNavigate
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GiZigzagLeaf } from 'react-icons/gi';
 import PropTypes from 'prop-types';
-import LoadingScreen from './LoadingScreen';
 import { LanguageContext } from './context/LanguageContext';
 import './styles/Navbar.css';
 

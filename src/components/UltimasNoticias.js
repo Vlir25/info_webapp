@@ -24,7 +24,7 @@ const UltimasNoticias = ({ noticiasData }) => {
             <div key={id} className="bg-white rounded-lg shadow-md p-6">
               <img src={noticia.image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 mb-4">{content.slice(0, 100)}...</p>
+              <p className="text-sm mb-4">{content.slice(0, 100)}.</p>
               <button
                 onClick={() => handleLeerMas(id)}
                 className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-green-700"

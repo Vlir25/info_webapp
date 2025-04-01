@@ -122,8 +122,8 @@ const Noticias = () => {
 
   return (
     <div className="novedades-container">
-      <h2 className="novedades-header">{language === 'es' ? 'Noticias' : 'News'}</h2> {/* Título de la sección */}
-      <div className="items-wrapper">
+      <h2 className="text-5xl font-bold mb-8">{language === 'es' ? 'Noticias' : 'News'}</h2> {/* Título de la sección */}
+      <div className="text-sm  mb-2">
         {noticiasAPresentar.map(([id, noticia]) => {
           const title = noticia.title[language]; // Acceso directo a las traducciones del título
           const content = noticia.content[language]; // Acceso directo a las traducciones del contenido

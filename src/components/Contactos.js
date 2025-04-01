@@ -15,7 +15,7 @@ const Contactos = () => {
               <FaLocationArrow className="text-3xl text-gray-700" />
               <div>
                 <Typography className="font-medium text-gray-900">Ubicación</Typography>
-                <Typography className="text-gray-600">1234 Calle Ficticia, Ciudad, País</Typography>
+                <Typography className="text-gray-600">Facultad de Ingenieria Mecanica, EPN <br/> (Quito, Ecuador)</Typography>
               </div>
             </div>
 

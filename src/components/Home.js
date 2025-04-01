@@ -110,7 +110,7 @@ const teamMembers = [
 const sponsors = [
   {
     name: "Escuela Politécnica Nacional",
-    img: "/list_colab/colab_9.png"
+    img: "/list_colab/EPN_logo_big.png"
   },
   {
     name: "KU Leuven",
@@ -252,15 +252,32 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="text-center p-[10vw] pt-8 pb-8 ">
+        <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
+        <div className="flex flex-wrap justify-center gap-28 mt-6 text-6xl sm:text-4xl md:text-5xl">
+          {sponsors.map((sponsor) => (
+            <div className="sponsor-item" key={sponsor.name} style={{
+              textAlign: 'center',
+              margin: '10px'
+            }}>
+              <img src={sponsor.img} alt={sponsor.name} style={{
+                maxWidth: '200px',
+                height: 'auto'
+              }} />
+              <h3>{sponsor.name}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
 
       {/* Sección de patrocinadores */}
-      <section className="text-center p-[10vw] pt-8 pb-8 ">
+        {/*<section className="text-center p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
         <div className="overflow-hidden">
-          <div className="flex animate-marquee space-x-8">
-            {/* Duplicamos el contenedor de las imágenes para crear el loop infinito */}
-            <div className="flex space-x-8">
+          <div className="flex items-center  space-x-8">
+            <div className="flex text-center space-x-8">
               {sponsors.map((sponsor) => (
                 <div className="text-center mx-4" key={sponsor.name}>
                   <img
@@ -272,8 +289,7 @@ const Home = () => {
                 </div>
               ))}
             </div>
-            {/* Repetimos las imágenes para lograr el ciclo de movimiento */}
-            <div className="flex space-x-8">
+            Repetimos las imágenes para lograr el ciclo de movimiento 
               {sponsors.map((sponsor) => (
                 <div className="text-center mx-4" key={sponsor.name}>
                   <img
@@ -285,9 +301,10 @@ const Home = () => {
                 </div>
               ))}
             </div>
+            
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 

@@ -108,13 +108,13 @@ const Footer = () => {
 
             {/* Redes Sociales */}
             <div className="mt-6 flex justify-end space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.facebook.com/ATAResearch" className="text-gray-400 hover:text-white">
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/ata_research_group/" className="text-gray-400 hover:text-white">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
