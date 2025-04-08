@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
+import { LanguageContext } from './context/LanguageContext';
 import { Carousel, IconButton, Typography, Button } from "@material-tailwind/react";
 
 const CarouselImg = ({ images }) => {
+    const { language, translations } = useContext(LanguageContext);
+    const currentTranslations = translations[language];
   return (
     <div className="flex justify-center items-center w-full">
       <Carousel
@@ -80,7 +82,7 @@ const CarouselImg = ({ images }) => {
               {index === 0 && (
                 <Button size="md" className=" bg-primary hover:bg-green-700" >
                   <Link to="/que-hacemos"  className="text-white">
-                  Conoce más
+                  {currentTranslations.buttonText1}
                   </Link>
                 </Button>
               )}

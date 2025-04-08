@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback } from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LanguageContext } from '../components/context/LanguageContext'; // Asegúrate de importar el LanguageContext
 import { Typography } from "@material-tailwind/react";
@@ -8,49 +8,8 @@ import './styles/Footer.css';
 
 
 const Footer = () => {
-  const { language } = useContext(LanguageContext); // Accedemos al idioma actual desde el contexto
-  const [copyMessage, setCopyMessage] = useState('');
-  const email = 'info@cavound.com';
-
-  const texts = {
-    es: {
-      copyright: '© 2024 Agricultura Sustentable',
-      termsOfUse: 'Términos de uso del sitio web',
-      privacyPolicy: 'Política de privacidad del sitio web',
-      cookiePolicy: 'Política de cookies del sitio web',
-      quickLinks: 'Enlaces rápidos:',
-      aboutUs: 'Acerca del proyecto',
-      whatWeDo: '¿Qué hacemos?',
-      news: 'Noticias',
-      geoportal: 'Geoportal',
-      contactUs: 'Contáctenos:',
-      instagramTitle: 'Instagram',
-      callTitle: 'Llamar',
-      locationTitle: 'Ubicación',
-      emailTitle: 'Correo Electrónico',
-      copyMessage: 'Correo electrónico copiado: '
-    },
-    en: {
-      copyright: '© 2024 Sustainable Agriculture',
-      termsOfUse: 'Web Terms of Use',
-      privacyPolicy: 'Web Privacy Policy',
-      cookiePolicy: 'Web Cookie Policy',
-      quickLinks: 'Quick links:',
-      aboutUs: 'About the project',
-      whatWeDo: 'What do we do?',
-      news: 'News',
-      geoportal: 'Geoportal',
-      contactUs: 'Contact us:',
-      instagramTitle: 'Instagram',
-      callTitle: 'Call',
-      locationTitle: 'Location',
-      emailTitle: 'Email',
-      copyMessage: 'Email copied: '
-    }
-  };
-
-
-
+  const { language, translations } = useContext(LanguageContext);
+  const currentTranslations = translations[language];
   return (
     <footer className="relative w-full bg-gray-900 text-white py-8">
       <div className="mx-auto w-full max-w-7xl px-8">
@@ -64,12 +23,12 @@ const Footer = () => {
               <p className="text-xl">VLIROUS SHORT INITIATIVE:<br />SMART FARMING</p>
             </div>
             <br />
-            <p className="text-lg mt-2 text-gray-500">Agricultura Inteligente para un Futuro Sostenible</p>
+            <p className="text-lg mt-2 text-gray-500">{currentTranslations.mainTitle}</p>
             <br />
             <div className="flex items-center justify-left space-x-4 text-white">
               {/* Teléfono */}
               <div className="relative flex flex-col items-center">
-                <a href="tel:+593999999999" className="font-medium text-lg">
+                <a href="tel:+593 99-664-5322" className="font-medium text-lg">
                   (+593) 99-664-5322
  
                 </a>
@@ -77,11 +36,11 @@ const Footer = () => {
               </div>
 
               {/* Separador "or" */}
-              <span className="text-gray-400 text-lg">o</span>
+              <span className="text-gray-400 text-lg">{currentTranslations.or}</span>
 
               {/* Correo */}
               <div className="relative flex flex-col items-center">
-                <a href="mailto:vlir2025@gmail.com" className="font-medium text-lg">
+                <a href="mailto:ata.rg@epn.edu.ec" className="font-medium text-lg">
                 ata.rg@epn.edu.ec
                 </a>
                 <span className="w-full h-0.5 bg-green-500 mt-1"></span>
@@ -91,19 +50,22 @@ const Footer = () => {
 
           {/* Sección Derecha - Enlaces Rápidos */}
           <div className="ml-auto ">
-            <Typography variant="h6" className="mb-3">Enlaces Rápidos</Typography>
+            <Typography variant="h6" className="mb-3">{currentTranslations.quickLinks}</Typography>
             <ul className="space-y-2 text-left">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white">Inicio</Link>
+                <Link to="/" className="text-gray-400 hover:text-white">{currentTranslations.home}</Link>
               </li>
               <li>
-                <Link to="/que-hacemos" className="text-gray-400 hover:text-white">Qué Hacemos</Link>
+                <Link to="/que-hacemos" className="text-gray-400 hover:text-white">{currentTranslations.whatWeDo}</Link>
               </li>
               <li>
-                <Link to="/noticias" className="text-gray-400 hover:text-white">Noticias</Link>
+                <Link to="/noticias" className="text-gray-400 hover:text-white">{currentTranslations.news}</Link>
               </li>
               <li>
-                <Link to="/geoportal" className="text-gray-400 hover:text-white">Geoportal</Link>
+                <Link to="/geoportal" className="text-gray-400 hover:text-white">{currentTranslations.geoportal}</Link>
+              </li>
+              <li>
+                <Link to="/contactos" className="text-gray-400 hover:text-white">{currentTranslations.contactUs}</Link>
               </li>
             </ul>
 
@@ -118,7 +80,7 @@ const Footer = () => {
               <a href="https://www.instagram.com/ata_research_group/" className="text-gray-400 hover:text-white">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/company/ata-research-group1" className="text-gray-400 hover:text-white">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
@@ -130,7 +92,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} ATA. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} {currentTranslations.copyright}
         </div>
       </div>
     </footer>

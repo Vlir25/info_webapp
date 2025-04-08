@@ -1,11 +1,17 @@
-import React from 'react';
-import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
+import React, { useContext } from 'react';
+import { LanguageContext } from './context/LanguageContext';
+
+
+import { Typography } from "@material-tailwind/react";
 import { FaLocationArrow, FaEnvelope, FaPhone } from 'react-icons/fa';  // Usando react-icons para los íconos
 
 const Contactos = () => {
+  const { language, translations } = useContext(LanguageContext);
+  const currentTranslations = translations[language];
+
   return (
     <section id="sobre-el-proyecto" className="text-center p-[10vw] pt-8 pb-8">
-      <h2 className="text-4xl font-bold m-auto">Contáctanos</h2>
+      <h2 className="text-4xl font-bold m-auto">{currentTranslations.contactTitle}</h2>
       <div className="container mx-auto">
         {/* Información de contacto */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-60">
@@ -14,15 +20,15 @@ const Contactos = () => {
             <div className="flex flex-col items-center space-y-2">
               <FaLocationArrow className="text-3xl text-gray-700" />
               <div>
-                <Typography className="font-medium text-gray-900">Ubicación</Typography>
-                <Typography className="text-gray-600">Grupo de investigación ATA-EPN,<br/> Laboratorio de UAVs,<br/> EPN <br/> (Quito, Ecuador)</Typography>
+                <Typography className="font-medium text-gray-900">{currentTranslations.location}</Typography>
+                <Typography className="text-gray-600">{currentTranslations.locationDescription1},<br/> {currentTranslations.locationDescription2},<br/> EPN <br/> (Quito, Ecuador)</Typography>
               </div>
             </div>
 
             <div className="flex flex-col items-center space-y-2">
               <FaEnvelope className="text-3xl text-gray-700" />
               <div>
-                <Typography className="font-medium text-gray-900">Correo Electrónico</Typography>
+                <Typography className="font-medium text-gray-900">{currentTranslations.email}</Typography>
                 <Typography className="text-gray-600">ata.rg@epn.edu.ec <br/> esteban.valencia@epn.edu.ec</Typography>
               </div>
             </div>
@@ -30,7 +36,7 @@ const Contactos = () => {
             <div className="flex flex-col items-center space-y-2">
               <FaPhone className="text-3xl text-gray-700" />
               <div>
-                <Typography className="font-medium text-gray-900">Teléfono</Typography>
+                <Typography className="font-medium text-gray-900">{currentTranslations.phone}</Typography>
                 <Typography className="text-gray-600">+593 996 645 322
                 </Typography>
               </div>

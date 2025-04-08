@@ -88,7 +88,8 @@ const Navbar = ({
     { to: "/que-hacemos", label: translations[language]?.navbar?.option2 || '¿Qué hacemos?' },
     { to: "/noticias", label: translations[language]?.navbar?.news || 'Noticias' },
     { to: "/geoportal", label: translations[language]?.navbar?.geoportal || 'Geoportal' },
-    { to: "/contactos", label: 'Contactos' }
+    { to: "/contactos", label: translations[language]?.navbar?.contacts || 'Contactos' },
+    
   ];
 
   const navLinks = customLinks || defaultLinks;

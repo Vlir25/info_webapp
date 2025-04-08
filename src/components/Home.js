@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
 import { LanguageContext } from './context/LanguageContext';
 import CarouselImg from './CarouselImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,29 +17,6 @@ import 'swiper/css/pagination';
 
 import { noticiasData } from './Noticiasdata'; // Importar datos
 import UltimasNoticias from './UltimasNoticias'; // Importar component
-
-
-
-const images = [
-  {
-    src: "/images/monitoreo.jpeg",
-    alt: "Imagen principal 1",
-    title: "Agricultura Inteligente para un futuro sostenible",
-    description: "Transformando la producción agrícola mediante tecnología avanzada.",
-  },
-  {
-    src: "/images/principal2.png",
-    alt: "Imagen principal 2",
-    title: "Innovación y Tecnología",
-    description: "Soluciones avanzadas para un mundo en constante cambio.",
-  },
-  {
-    src: "/images/principal.png",
-    alt: "Monitoreo Inteligente",
-    title: "Monitoreo en tiempo real",
-    description: "Controla tus procesos con nuestra plataforma digital.",
-  },
-];
 
 
 // Datos de los miembros del equipo -ventana incial
@@ -126,6 +102,29 @@ const Home = () => {
   const { language, translations } = useContext(LanguageContext);
   const currentTranslations = translations[language];
 
+  
+  // Generar imágenes dinámicamente con traducciones
+  const images =  [
+    {
+      src: "/images/monitoreo.jpeg",
+      alt: "Imagen principal 1",
+      title: currentTranslations.mainTitle || "Sembrando Tecnología, Cosechando Futuro",
+      description: currentTranslations.mainSubTitle || "Agricultura inteligente para comunidades resilientes",
+    },
+    {
+      src: "/images/principal2.png",
+      alt: "Imagen principal 2",
+      title: currentTranslations.mainTitle2 || "Innovar para Cultivar con Conciencia",
+      description: currentTranslations.mainSubTitle2 || "Sostenibilidad y tecnología al servicio del agricultor",
+    },
+    {
+      src: "/images/principal.png",
+      alt: "Monitoreo Inteligente",
+      title: currentTranslations.mainTitle3 || "Más Allá del Cultivo",
+      description:currentTranslations.mainSubTitle3 || "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
+    },
+  ];
+
   return (
     <div className="" >
       {/* Contenedor del carrusel */}
@@ -139,27 +138,27 @@ const Home = () => {
         <h1 style={{ textTransform: 'uppercase' }}>
           {/*currentTranslations.mainTitle*/}
         </h1>
-        <p className="mt-4 text-xl  ">{currentTranslations.projectDescription}</p>
+        <p className="mt-4 text-xl  ">{currentTranslations.projectDescription1}</p>
         <div className="flex flex-wrap justify-center gap-10 mt-6 text-light-green-800 text-6xl sm:text-4xl md:text-5xl">
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-desktop" />
-            <p className="text-xl mt-2">Monitoreo remoto</p>
+            <p className="text-xl mt-2">{currentTranslations.projectsubDescription1}</p>
           </div>
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-robot" />
-            <p className="text-xl mt-2"> Inteligencia Artificial</p>
+            <p className="text-xl mt-2">{currentTranslations.projectsubDescription2}</p>
           </div>
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-chart-line" />
-            <p className="text-xl mt-2">Análisis de datos</p>
+            <p className="text-xl mt-2">{currentTranslations.projectsubDescription3}</p>
           </div>
         </div>
-
+        <p className="mt-4 text-xl  ">{currentTranslations.projectDescription2}</p>
       </section>
 
       {/* Nueva Sección Sobre el proyecto */}
       <section id="sobre-el-proyecto" className="text-center  p-[10vw] pt-8 pb-8 ">
-        <h2 className="text-5xl font-bold mb-8">Sobre el proyecto</h2>
+        <h2 className="text-5xl font-bold mb-8">{currentTranslations.aboutProject}</h2>
 
         {/* Sección de Objetivos */}
         <div className="flex flex-col md:flex-row items-center mb-10">
@@ -174,7 +173,7 @@ const Home = () => {
               <br />
               <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
                 <Link to="/que-hacemos"  className="text-white">
-                  ¿Cómo lo hacemos?
+                  ¿{currentTranslations.buttonText2}?
                 </Link>
               </Button>
             </p>

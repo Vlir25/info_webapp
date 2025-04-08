@@ -9,7 +9,8 @@ import OpenAI from "openai"; // Importa la biblioteca OpenAI
 import MarkdownRenderer from "./MarkdownRenderer"; // Importa el componente MarkdownRenderer
 
 const Geoportal = () => {
-  useContext(LanguageContext);
+  const { language, translations } = useContext(LanguageContext);
+  const currentTranslations = translations[language];
   const [hasAccess, setHasAccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -90,29 +91,29 @@ const Geoportal = () => {
   if (!hasAccess) {
     return (
       <div className="home-container">
-        <h2 className="text-4xl font-bold p-[10vw] pt-8 pb-8 m-auto">Regístrate para acceder al Geoportal</h2>
+        <h2 className="text-4xl font-bold p-[10vw] pt-8 pb-8 m-auto">{currentTranslations.geoForm}</h2>
 
         <form onSubmit={handleSubmit} className="tech-intro space-y-4 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
           <div className="flex flex-col">
-            <label className="font-semibold text-gray-700">Nombre:</label>
+            <label className="font-semibold text-gray-700">{currentTranslations.geoFormName}:</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required
               className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
 
           <div className="flex flex-col">
-            <label className="font-semibold text-gray-700">Email:</label>
+            <label className="font-semibold text-gray-700">{currentTranslations.geoFormEmail}:</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} required
               className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
 
           <div className="flex flex-col">
-            <label className="font-semibold text-gray-700">Teléfono:</label>
+            <label className="font-semibold text-gray-700">{currentTranslations.geoFormPhone}:</label>
             <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required
               className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
 
           <div className="flex flex-col">
-            <label className="font-semibold text-gray-700">Ciudad:</label>
+            <label className="font-semibold text-gray-700">{currentTranslations.geoFormCity}:</label>
             <input type="text" name="city" value={formData.city} onChange={handleChange} required
               className="mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
@@ -120,11 +121,11 @@ const Geoportal = () => {
           <div className="flex items-center gap-2">
             <input type="checkbox" name="interested" checked={formData.interested} onChange={handleChange}
               className="h-5 w-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500" />
-            <label className="text-gray-700">¿Te gustaría vincularte a la comunidad?</label>
+            <label className="text-gray-700">{currentTranslations.geoFormLabel}</label>
           </div>
 
           <button type="submit" className="w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
-            Enviar
+          {currentTranslations.geoFormButton}
           </button>
         </form>
 

@@ -1,14 +1,3 @@
-/*VENTANA PARA COLOCAR LAS NOTICIAS CORRESPONDIENTES
-VARIABLES --2-> ´noticia1´
-TITULO----> "venta de cultivo"
-CONTENIDO------> "se vendio .........."
-IMAGEN --> "/public/images/noticias" puede añadir para mas comodidad un enlace url
-
-ajustes 2025- correccion de errores -bugs
-*/
-
-
-
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from './context/LanguageContext'; // Asegúrate de que la ruta sea correcta
