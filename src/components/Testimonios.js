@@ -23,7 +23,7 @@ function Hacemos() {
       id: 3,
       title: translations[language].testimonios.title3,
       content: translations[language].testimonios.content3,
-      image: "/we_does/design_uas.png",
+      image: "/images/scan.jpg",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ function Hacemos() {
       id: 5,
       title: translations[language].testimonios.title5,
       content: translations[language].testimonios.content5,
-      image: "/we_does/cultivo_4.png",
+      image: "/images/principal2.png",
     },
   ];
 
@@ -50,8 +50,8 @@ function Hacemos() {
         {testimoniosData.map((testimonio, index) => (
           <div 
             key={testimonio.id} 
-            className={`flex p-[10vw] flex-col md:flex-row items-center mb-10 ${index % 2 === 0 ? 'bg-transparent' : 'bg-gray-300'}`}
-          >
+            className={`flex min-h-[400px] p-[10vw] flex-col md:flex-row items-center mb-10 ${index % 2 === 0 ? 'bg-transparent' : 'bg-gray-300'}`}
+            >
             {/* Alternar la posición del texto y la imagen */}
             {index % 2 === 0 ? (
               <>
@@ -66,7 +66,7 @@ function Hacemos() {
                   <img 
                     src={testimonio.image} 
                     alt={testimonio.title} 
-                    className="max-w-full h-auto rounded-lg shadow-md"
+                    className="h-full w-auto max-h-[500px] object-cover rounded-lg shadow-md"
                   />
                 </div>
               </>

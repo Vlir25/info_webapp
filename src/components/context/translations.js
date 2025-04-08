@@ -126,6 +126,9 @@ const translations = {
     phone: "Teléfono",
     locationDescription1: "Grupo de investigación ATA-EPN",
     locationDescription2: "Laboratorio de UAV´s",
+    contactQr: "Escanea el código para más información",
+    followUs: "Síguenos en nuestras redes sociales", 
+
 
     //footer
     or: "o",
@@ -269,6 +272,8 @@ const translations = {
     locationDescription2: "UAV´s Laboratory",
     email: "Email",
     phone: "Phone",
+    contactQr: "Scan the code for more information",
+    followUs: "Follow us on our social media",
 
 
 

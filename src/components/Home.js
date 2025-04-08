@@ -106,19 +106,19 @@ const Home = () => {
   // Generar imágenes dinámicamente con traducciones
   const images = [
     {
-      src: "/images/monitoreo.jpeg",
+      src: "/images/team_drone.jpg",
       alt: "Imagen principal 1",
       title: currentTranslations.mainTitle || "Sembrando Tecnología, Cosechando Futuro",
       description: currentTranslations.mainSubTitle || "Agricultura inteligente para comunidades resilientes",
     },
     {
-      src: "/images/principal2.png",
+      src: "/images/gallery_1.jpg",
       alt: "Imagen principal 2",
       title: currentTranslations.mainTitle2 || "Innovar para Cultivar con Conciencia",
       description: currentTranslations.mainSubTitle2 || "Sostenibilidad y tecnología al servicio del agricultor",
     },
     {
-      src: "/images/principal.png",
+      src: "/images/monitoreo.jpeg",
       alt: "Monitoreo Inteligente",
       title: currentTranslations.mainTitle3 || "Más Allá del Cultivo",
       description: currentTranslations.mainSubTitle3 || "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
@@ -139,10 +139,11 @@ const Home = () => {
           {/*currentTranslations.mainTitle*/}
         </h1>
         <p className="mt-4 text-xl  ">{currentTranslations.projectDescription1}</p>
-        <div className="flex flex-wrap justify-center gap-10 mt-6 text-light-green-800 text-6xl sm:text-4xl md:text-5xl">
+        <div className="flex flex-wrap justify-center gap-10 mt-14 m-14 text-light-green-800 text-6xl sm:text-4xl md:text-5xl">
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-desktop" />
             <p className="text-xl mt-2">{currentTranslations.projectsubDescription1}</p>
+            
           </div>
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-robot" />
@@ -180,7 +181,11 @@ const Home = () => {
           </div>
           {/* Imagen a la derecha */}
           <div className="md:w-1/2 p-4 flex justify-center">
-            <img src="/images/postal.jpeg" alt="Objetivos del Proyecto" className="max-w-full h-auto rounded-lg shadow-md" />
+            <img 
+              src="/images/postal.jpeg" 
+              alt="Objetivos del Proyecto" 
+              className="w-full h-full object-cover rounded-lg shadow-md" // Cambiado a w-full y h-full
+            />
           </div>
         </div>
         <br />
@@ -226,7 +231,7 @@ const Home = () => {
             <img
               src="/images/drone_1.jpg"
               alt="Líneas de Investigación"
-              className="max-w-full h-auto rounded-lg shadow-md [mask-image:linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,0))]"
+              className="w-full h-full object-cover rounded-lg shadow-md " // Cambiado a w-full y h-full
             />
           </div>
         </div>
