@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { LanguageContext } from './context/LanguageContext';
 import './styles/Navbar.css';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 
 const LOADING_DELAY = 12000;
 
@@ -82,9 +83,26 @@ const Navbar = ({
     navigate("/inicio");  // Redirige a la página de inicio
   };
 
+  const handleScrollToSection = (sectionId) => {
+    if (window.location.pathname !== '/inicio') {
+      navigate('/inicio');
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          smooth: true,
+          duration: 500,
+        });
+      }, 100); // Espera un poco para que la navegación ocurra
+    } else {
+      scroller.scrollTo(sectionId, {
+        smooth: true,
+        duration: 500,
+      });
+    }
+  };
+
   const defaultLinks = [
     { to: "/inicio", label: translations[language]?.navbar?.title || 'Inicio' },
-    { to: "/inicio#sobre-el-proyecto", label: translations[language]?.navbar?.option1 || 'Sobre el proyecto' },
+    { to: "#sobre-el-proyecto", label: translations[language]?.navbar?.option1 || 'Sobre el proyecto' },
     { to: "/que-hacemos", label: translations[language]?.navbar?.option2 || '¿Qué hacemos?' },
     { to: "/noticias", label: translations[language]?.navbar?.news || 'Noticias' },
     { to: "/geoportal", label: translations[language]?.navbar?.geoportal || 'Geoportal' },
@@ -116,9 +134,19 @@ const Navbar = ({
         </div>
         <ul className="flex space-x-4">
           {navLinks.map(({ to, label }) => (
-            <NavLink key={to} to={to}>
-              {label}
-            </NavLink>
+            to === "#sobre-el-proyecto" ? (
+              <li key={to}>
+                <button
+                  onClick={() => handleScrollToSection('sobre-el-proyecto')}
+                >
+                  {label}
+                </button>
+              </li>
+            ) : (
+              <NavLink key={to} to={to}>
+                {label}
+              </NavLink>
+            )
           ))}
         </ul>
 

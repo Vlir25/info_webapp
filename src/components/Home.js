@@ -102,9 +102,9 @@ const Home = () => {
   const { language, translations } = useContext(LanguageContext);
   const currentTranslations = translations[language];
 
-  
+
   // Generar imágenes dinámicamente con traducciones
-  const images =  [
+  const images = [
     {
       src: "/images/monitoreo.jpeg",
       alt: "Imagen principal 1",
@@ -121,7 +121,7 @@ const Home = () => {
       src: "/images/principal.png",
       alt: "Monitoreo Inteligente",
       title: currentTranslations.mainTitle3 || "Más Allá del Cultivo",
-      description:currentTranslations.mainSubTitle3 || "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
+      description: currentTranslations.mainSubTitle3 || "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
     },
   ];
 
@@ -170,12 +170,12 @@ const Home = () => {
             <p className="text-xl">{currentTranslations.newThemeDescription}
               <br />
               <br />
-              <br />
-              <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
-                <Link to="/que-hacemos"  className="text-white">
+              <br />                <Link to="/que-hacemos" className="text-white">
+
+                <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
                   ¿{currentTranslations.buttonText2}?
-                </Link>
-              </Button>
+
+                </Button></Link>
             </p>
           </div>
           {/* Imagen a la derecha */}
@@ -272,7 +272,7 @@ const Home = () => {
 
 
       {/* Sección de patrocinadores */}
-        {/*<section className="text-center p-[10vw] pt-8 pb-8 ">
+      {/*<section className="text-center p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
         <div className="overflow-hidden">
           <div className="flex items-center  space-x-8">

@@ -4,8 +4,8 @@ import { LanguageContext } from './context/LanguageContext';
 import { Carousel, IconButton, Typography, Button } from "@material-tailwind/react";
 
 const CarouselImg = ({ images }) => {
-    const { language, translations } = useContext(LanguageContext);
-    const currentTranslations = translations[language];
+  const { language, translations } = useContext(LanguageContext);
+  const currentTranslations = translations[language];
   return (
     <div className="flex justify-center items-center w-full">
       <Carousel
@@ -43,9 +43,8 @@ const CarouselImg = ({ images }) => {
             {new Array(length).fill("").map((_, i) => (
               <span
                 key={i}
-                className={`block h-1 cursor-pointer rounded-2xl transition-all ${
-                  activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-                }`}
+                className={`block h-1 cursor-pointer rounded-2xl transition-all ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                  }`}
                 onClick={() => setActiveIndex(i)}
               />
             ))}
@@ -79,12 +78,12 @@ const CarouselImg = ({ images }) => {
                 {image.description || "Descripción corta de la imagen."}
               </Typography>
 
-              {index === 0 && (
+              {index === 0 && (<Link to="/que-hacemos" className="text-white">
+
                 <Button size="md" className=" bg-primary hover:bg-green-700" >
-                  <Link to="/que-hacemos"  className="text-white">
                   {currentTranslations.buttonText1}
-                  </Link>
-                </Button>
+
+                </Button>  </Link>
               )}
             </div>
           </div>
