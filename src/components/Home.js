@@ -168,7 +168,7 @@ const Home = () => {
             <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newThemeTitle}</h3>
             <br />
             <br />
-            <p className="text-xl">{currentTranslations.newThemeDescription}
+            <p className="text-xl text-justify">{currentTranslations.newThemeDescription}
               <br />
               <br />
               <br />                <Link to="/que-hacemos" className="text-white">
@@ -201,28 +201,28 @@ const Home = () => {
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
                   <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
                 </div>
-                <p className="text-xl">{currentTranslations.newLinesDescription1}</p>
+                <p className="text-xl text-justify">{currentTranslations.newLinesDescription1}</p>
               </div>
               {/* Línea 2 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
                   <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-brain" /></span>
                 </div>
-                <p className="text-xl">{currentTranslations.newLinesDescription2}</p>
+                <p className="text-xl text-justify">{currentTranslations.newLinesDescription2}</p>
               </div>
               {/* Línea 3 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
                   <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-droplet" /></span>
                 </div>
-                <p className="text-xl">{currentTranslations.newLinesDescription3}</p>
+                <p className="text-xl text-justify">{currentTranslations.newLinesDescription3}</p>
               </div>
               {/* Línea 4 */}
               <div className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-4">
                   <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-building-wheat" /></span>
                 </div>
-                <p className="text-xl">{currentTranslations.newLinesDescription4}</p>
+                <p className="text-xl text-justify">{currentTranslations.newLinesDescription4}</p>
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ const Home = () => {
           <div className="md:w-1/2  text-left p-4">
             <h3 className="text-3xl font-semibold mb-4">{currentTranslations.newSponsorTitle}</h3>
             <br />
-            <p className="text-xl">{currentTranslations.newSponsorDescription}</p>
+            <p className="text-xl text-justify">{currentTranslations.newSponsorDescription}</p>
           </div>
           {/* Imagen a la derecha */}
           <div className="md:w-1/2 p-4 flex justify-center">
@@ -356,16 +356,7 @@ const Home = () => {
 
 
       {/* Contenedor de ultimas noticias */}
-      <section className="text-center p-[10vw] pt-8 pb-8 ">
-        <h2 className="text-5xl font-bold mb-8">Últimas noticias</h2>
-        <div>
-          {/* Pasar noticiasData como prop al componente UltimasNoticias */}
-          <UltimasNoticias noticiasData={noticiasData} />
-        </div>
-
-
-      </section>
-
+      
 
 
     </div>

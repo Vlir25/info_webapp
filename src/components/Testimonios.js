@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import './styles/Testimonios.css'; 
-import { LanguageContext } from './context/LanguageContext'; 
+import './styles/Testimonios.css';
+import { LanguageContext } from './context/LanguageContext';
 
 function Hacemos() {
   const { language, translations } = useContext(LanguageContext);
   const currentTranslations = translations[language];
 
-  const testimoniosData = [ 
+  const testimoniosData = [
     {
       id: 1,
       title: translations[language].testimonios.title1,
@@ -40,51 +40,51 @@ function Hacemos() {
   ];
 
   return (
-    <section className="text-center">
-      <div className="text-center  mt-10">
-      <h2 className="text-4xl font-bold mb-8">{currentTranslations.whatWeDo}</h2>
+    <section className="text-center p-[10vw] pt-8 pb-8 ">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold mb-8">{currentTranslations.whatWeDo}</h2>
         <p className="text-center m-10 text-xl  ">{currentTranslations.whatWeDoDescription}</p>
       </div>
 
-      <div className="flex flex-col space-y-8">
+      <div className="flex flex-col items-center justify-center f">
         {testimoniosData.map((testimonio, index) => (
-          <div 
-            key={testimonio.id} 
-            className={`flex min-h-[400px] p-[10vw] flex-col md:flex-row items-center mb-10 ${index % 2 === 0 ? 'bg-transparent' : 'bg-gray-300'}`}
-            >
+          <div
+            key={testimonio.id}
+            className={`flex  flex-col  md:flex-row gap-10 justify-center items-center mb-10 ${index % 2 === 0 ? 'bg-transparent' : 'bg-transparent'}`}
+          >
             {/* Alternar la posición del texto y la imagen */}
             {index % 2 === 0 ? (
               <>
                 {/* Texto a la izquierda */}
                 <div className="md:w-1/2 text-left p-4">
                   <h3 className="text-3xl font-semibold mb-4">{testimonio.title}</h3>
-                  <p className="text-xl text-gray-700">{testimonio.content}</p>
+                  <p className="text-xl text-gray-700  text-justify">{testimonio.content}</p>
                 </div>
 
                 {/* Imagen a la derecha */}
-                <div className="md:w-1/2 p-4 flex justify-center"> 
-                  <img 
-                    src={testimonio.image} 
-                    alt={testimonio.title} 
-                    className="h-full w-auto max-h-[500px] object-cover rounded-lg shadow-md"
+                <div className="w-full max-w-[500px] aspect-[4/3]">
+                  <img
+                    src={testimonio.image}
+                    alt={testimonio.title}
+                    className="w-full h-full object-cover rounded-lg shadow-md"
                   />
                 </div>
               </>
             ) : (
               <>
                 {/* Imagen a la izquierda */}
-                <div className="md:w-1/2 p-4 flex justify-center"> 
-                  <img 
-                    src={testimonio.image} 
-                    alt={testimonio.title} 
-                    className="max-w-full h-auto rounded-lg shadow-md"
+                <div className="w-full max-w-[500px] aspect-[4/3]">
+                  <img
+                    src={testimonio.image}
+                    alt={testimonio.title}
+                    className="w-full h-full object-cover rounded-lg shadow-md"
                   />
                 </div>
 
                 {/* Texto a la derecha */}
                 <div className="md:w-1/2 text-left p-4">
                   <h3 className="text-3xl font-semibold mb-4">{testimonio.title}</h3>
-                  <p className="text-xl text-gray-700">{testimonio.content}</p>
+                  <p className="text-xl text-gray-700  text-justify">{testimonio.content}</p>
                 </div>
               </>
             )}
