@@ -2,32 +2,51 @@ const translations = {
   es: {
     // Traducción de elementos en el navbar (barra de navegación)
     navbar: {
-      title: "Título",            // Título en la barra de navegación
+      title: "Inicio",            // Título en la barra de navegación
       option1: "Sobre el proyecto",     // Opción 1 en el navbar
       option2: "¿Qué hacemos?",   // Opción 2 en el navbar
       news: "Noticias",           // Opción de noticias en el navbar
       geoportal: "Geoportal",     // Opción de geoportal en el navbar
+      contacts: "Contactos",       // Opción de contacto en el navbar
     },
-    
+
     // Traducción del título principal de la página
-    mainTitle: "Agricultura Inteligente para un Futuro Sostenible",
+    mainTitle: "Sembrando Tecnología, Cosechando Futuro",
+    mainTitle2: "Innovar para Cultivar con Conciencia",
+    mainTitle3: "Más Allá del Cultivo",
+
+    mainSubTitle: "Agricultura inteligente para comunidades resilientes",
+    mainSubTitle2: "Sostenibilidad y tecnología al servicio del agricultor",
+    mainSubTitle3: "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
+
+    buttonText1: "Conoce más",
+
 
     // Descripción del proyecto
-    projectDescription: "Es una iniciativa que busca revolucionar la producción agrícola a través del uso de tecnologías avanzadas. Nuestro enfoque combina monitoreo remoto, inteligencia artificial y análisis de datos para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
+    projectDescription1: "Es una iniciativa que busca revolucionar la producción agrícola a través del uso de tecnologías avanzadas. Nuestro enfoque combina: ",
+    projectsubDescription1: "Monitoreo Remoto",
+    projectsubDescription2: "Inteligencia Artificial",
+    projectsubDescription3: "Análisis de Datos",
+    projectDescription2: "para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
 
-  newThemeTitle: "🌍 Objetivo Principal",
-  newThemeDescription: "Desarrollar e implementar un modelo de agricultura inteligente que permita mejorar la productividad del cultivo de pitahaya, optimizar el uso de recursos y evaluar el impacto social y económico en la reducción de la pobreza y la desigualdad.",
-  newLines: "🔬 Líneas de Investigación",
-  newLinesDescription1: "✔️ Integración de sensores y monitoreo remoto para evaluar la salud del cultivo.",
-  newLinesDescription2: "✔️ Aplicación de inteligencia artificial para el análisis predictivo.",
-  newLinesDescription3: "✔️ Uso eficiente del agua y reducción del impacto ambiental.",
-  newLinesDescription4: "✔️ Desarrollo de metodologías escalables para pequeños y medianos productores.",
+    aboutProject: "Sobre el proyecto",
+
+    newThemeTitle: "Objetivo Principal",
+    newThemeDescription: "Desarrollar e implementar un modelo de agricultura inteligente que permita mejorar la productividad del cultivo de pitahaya, optimizar el uso de recursos y evaluar el impacto social y económico en la reducción de la pobreza y la desigualdad.",
+
+    buttonText2: "Como lo hacemos",
+
+    newLines: "Líneas de Investigación",
+    newLinesDescription1: "Integración de sensores y monitoreo remoto para evaluar la salud del cultivo.",
+    newLinesDescription2: "Aplicación de inteligencia artificial para el análisis predictivo.",
+    newLinesDescription3: "Uso eficiente del agua y reducción del impacto ambiental.",
+    newLinesDescription4: "Desarrollo de metodologías escalables para pequeños y medianos productores.",
 
     // Títulos de las secciones de patrocinadores y gestión
     sponsorsTitle: "Entidades participantes",
-   
-    newSponsorTitle: "📢 Auspiciante",
-    newSponsorDescription: "Este proyecto ha sido posible gracias al apoyo de VLIR-UOS a través de un Short Initiative, fomentando la cooperación académica entre Bélgica y países en desarrollo. El financiamiento ha permitido integrar inteligencia artificial, monitoreo remoto y análisis multiespectral en la agricultura, mejorando su productividad y sostenibilidad. Buscamos impactar el sector agrícola mediante innovación, investigación aplicada y colaboración internacional.",
+
+    newSponsorTitle: "Auspiciante",
+    newSponsorDescription: "El desarrollo de este proyecto ha sido posible gracias al apoyo de VLIR-UOS a través de un Short Initiative, un programa que impulsa la cooperación académica entre instituciones de Bélgica y países en desarrollo. Este financiamiento ha permitido la integración de tecnología avanzada en la agricultura, promoviendo el uso de inteligencia artificial, monitoreo remoto y procesamiento de datos multiespectrales para mejorar la productividad y sostenibilidad de los cultivos. Nuestro compromiso es generar un impacto positivo en el sector agrícola, contribuyendo a la innovación y fortaleciendo las capacidades locales mediante investigación aplicada y colaboración internacional.",
     // Títulos de la galería y del equipo
 
     teamTitle: "Colaboradores",
@@ -46,7 +65,7 @@ const translations = {
 
 
 
-    
+
     // Traducción de las noticias
     noticias: {
       news: "Noticias",               // Título de la sección de noticias
@@ -55,6 +74,8 @@ const translations = {
     },
 
     // Traducción de testimonios
+    whatWeDoDescription: "Aprovechamos tecnología avanzada para optimizar la producción agrícola. \n A través de drones, sensores multiespectrales e inteligencia artificial, analizamos el estado del cultivo y generamos estrategias para su mejor desarrollo.",
+
     testimonios: {
       title1: "Análisis del cultivo y planificación del monitoreo",
       content1: "Se evalúan las necesidades del cultivo para definir los objetivos del monitoreo. Se identifican las variables clave a observar y se establecen estrategias para un seguimiento eficiente.",
@@ -67,6 +88,8 @@ const translations = {
       title5: "Socialización de resultados y toma de decisiones",
       content5: "Los hallazgos se comparten con agricultores y expertos para optimizar estrategias de manejo. Se generan recomendaciones basadas en datos para mejorar la productividad y sostenibilidad del cultivo.",
     },
+
+
 
     // Traducción de los iconos con título y descripción
     icons: {
@@ -86,61 +109,109 @@ const translations = {
         title: "Icono de Colaboración",
         description: "Este icono refleja el trabajo en equipo y la colaboración entre expertos para lograr los objetivos del proyecto."
       },
-    }
+    },
+    //geoportal
+    geoForm: "Regístrate para acceder al Geoportal",
+    geoFormName: "Nombre",
+    geoFormEmail: "Correo electrónico",
+    geoFormPhone: "Teléfono",
+    geoFormCity: "Ciudad",
+    geoFormLabel: "¿Te gustaría vincularte a la comunidad?",
+    geoFormButton: "Enviar",
+
+    //contactos
+    contactTitle: "Contáctanos",
+    location: "Ubicación",
+    email: "Correo Electrónico",
+    phone: "Teléfono",
+    locationDescription1: "Grupo de investigación ATA-EPN",
+    locationDescription2: "Laboratorio de UAV´s",
+    contactQr: "Escanea el código para más información",
+    followUs: "Síguenos en nuestras redes sociales", 
+
+
+    //footer
+    or: "o",
+    copyright: 'ATA. Todos los derechos reservados.',
+    quickLinks: 'Enlaces rápidos:',
+    home: 'Inicio',
+    aboutUs: 'Sobre el proyecto',
+    whatWeDo: '¿Qué hacemos?',
+    news: 'Noticias',
+    geoportal: 'Geoportal',
+    contactUs: 'Contactos',
   },
 
   en: {
     // Traducción de elementos en el navbar (barra de navegación)
     navbar: {
-      title: "Title",
+      title: "Home",
       option1: "About the project",
       option2: "What do we do?",
       news: "News",
       geoportal: "Geoportal",
+      contacts: "Contacts",
     },
 
     // Traducción del título principal de la página
-    mainTitle: "Smart Agriculture for a Sustainable Future.",
+    mainTitle: "Sowing Technology, Harvesting Future",
+    mainTitle2: "Innovating for Conscious Cultivation",
+    mainTitle3: "Beyond Cultivation",
+
+    mainSubTitle: "Smart agriculture for resilient communities",
+    mainSubTitle2: "Sustainability and technology at the service of farmers",
+    mainSubTitle3: "How pitahaya drives inclusion, income, and hope",
 
     // Descripción del proyecto
-    projectDescription: "Is an initiative that seeks to revolutionize agricultural production through the use of advanced technologies. Our approach combines remote monitoring, artificial intelligence and data analytics to optimize crop yields and reduce inequality in rural communities.",
+    projectDescription1: "It is an initiative that seeks to revolutionize agricultural production through the use of advanced technologies. Our approach combines: ",
+    projectsubDescription1: "Remote Monitoring",
+    projectsubDescription2: "Artificial Intelligence",
+    projectsubDescription3: "Data Analysis",
+    projectDescription2: "to optimize crop yield and reduce inequality in rural communities.",
+
+    buttonText1: "Learn more",
+
+    aboutProject: "About the project",
+
 
     // traduccion objetivo
-    newThemeTitle: "🌍 Main Objective",
+    newThemeTitle: "Main Objective",
     newThemeDescription: "Develop and implement a smart agriculture model to improve dragon fruit crop productivity, optimize resource use, and evaluate the social and economic impact on poverty and inequality reduction.",
-    
+
+    buttonText2: "How we do it",
+
     // traduccion lineas de investigacion
-    newLines: "🔬 Research Lines",
-    newLinesDescription1: "✔️ Integration of sensors and remote monitoring to assess crop health.",
-    newLinesDescription2: "✔️ Application of artificial intelligence for predictive analysis.",
-    newLinesDescription3: "✔️ Efficient water use and reduction of environmental impact.",
-    newLinesDescription4: "✔️ Development of scalable methodologies for small and medium-sized producers.",
+    newLines: "Research Lines",
+    newLinesDescription1: "Integration of sensors and remote monitoring to assess crop health.",
+    newLinesDescription2: "Application of artificial intelligence for predictive analysis.",
+    newLinesDescription3: "Efficient water use and reduction of environmental impact.",
+    newLinesDescription4: "Development of scalable methodologies for small and medium-sized producers.",
 
     // Títulos de las secciones de patrocinadores y gestión
     sponsorsTitle: "Entities Involved",
 
-    newSponsorTitle: "📢 Sponsor",
-    newSponsorDescription: "This project has been made possible with the support of VLIR-UOS through a Short Initiative, promoting academic cooperation between Belgium and developing countries. The funding has enabled the integration of AI, remote monitoring, and multispectral analysis in agriculture, enhancing productivity and sustainability. We aim to create a positive impact on the agricultural sector through innovation, applied research, and international collaboration.",
+    newSponsorTitle: "Sponsor",
+    newSponsorDescription: "The development of this project has been made possible thanks to the support of VLIR-UOS through a Short Initiative, a program that promotes academic cooperation between Belgian institutions and developing countries. This funding has enabled the integration of advanced technology in agriculture, fostering the use of artificial intelligence, remote monitoring, and multispectral data processing to enhance crop productivity and sustainability. Our commitment is to create a positive impact in the agricultural sector, contributing to innovation and strengthening local capacities through applied research and international collaboration.",
 
     // Títulos de la galería y del equipo
     galleryTitle: "Innovation Gallery",
     teamTitle: "Collaborators",
-    
-// traduccion miembros del equipo en ingles
-teamMembers: {
-  "Patrick Vandewalle": "Patrick Vandewalle is an Associate Professor at KU Leuven, Belgium, specializing in computer vision and image processing.",
-  "Esteban Valencia": "Esteban Valencia, Mechanical Engineer from EPN with a Master's in Aerospace and a PhD in Power and Propulsion.",
-  "Jackeline Abad": "Associate Professor at EPN, holds a Master's and PhD in Electrical Engineering from Washington State University.",
-  /*"Carina Rosero": "Analyst at the Ministry of Production of Ecuador since 2021, with experience in health and regulatory affairs.",
-  "Yadira Vargas": "Agricultural Engineer with 10 years of research experience in Amazonian fruit crops.",
-  "Hernan Rivadeneira": "Director of Agrocalidad in Morona Santiago and Technical Professional at the Ministry of Agriculture, he is a Veterinarian and Zootechnician.",*/
-  "Jenny Ávila": "Jenny Ávila Vélez, Master's in Food Science, analyzes pitahaya in pilot farms, optimizing crop management.",
-  "Cristina Romero": "Cristina Romero is a PhD in Agricultural Economics and Rural Development and has been teaching at the Escuela Politécnica Nacional since 2016."/*,
-  "Diana Navarro": "Diana supervises and validates telecommunication systems, including protocols, hardware, and architecture."*/
-},
-      
 
-    
+    // traduccion miembros del equipo en ingles
+    teamMembers: {
+      "Patrick Vandewalle": "Patrick Vandewalle is an Associate Professor at KU Leuven, Belgium, specializing in computer vision and image processing.",
+      "Esteban Valencia": "Esteban Valencia, Mechanical Engineer from EPN with a Master's in Aerospace and a PhD in Power and Propulsion.",
+      "Jackeline Abad": "Associate Professor at EPN, holds a Master's and PhD in Electrical Engineering from Washington State University.",
+      /*"Carina Rosero": "Analyst at the Ministry of Production of Ecuador since 2021, with experience in health and regulatory affairs.",
+      "Yadira Vargas": "Agricultural Engineer with 10 years of research experience in Amazonian fruit crops.",
+      "Hernan Rivadeneira": "Director of Agrocalidad in Morona Santiago and Technical Professional at the Ministry of Agriculture, he is a Veterinarian and Zootechnician.",*/
+      "Jenny Ávila": "Jenny Ávila Vélez, Master's in Food Science, analyzes pitahaya in pilot farms, optimizing crop management.",
+      "Cristina Romero": "Cristina Romero is a PhD in Agricultural Economics and Rural Development and has been teaching at the Escuela Politécnica Nacional since 2016."/*,
+  "Diana Navarro": "Diana supervises and validates telecommunication systems, including protocols, hardware, and architecture."*/
+    },
+
+
+
 
     // Traducción de las noticias
     noticias: {
@@ -150,6 +221,8 @@ teamMembers: {
     },
 
     // Traducción de testimonios
+    whatWeDoDescription: "We leverage advanced technology to optimize agricultural production. \n Through drones, multispectral sensors, and artificial intelligence, we analyze crop conditions and generate strategies for better development.",
+
     testimonios: {
       title1: "Crop Analysis and Monitoring Planning",
       content1: "The crop’s needs are assessed to define monitoring objectives. Key variables to observe are identified, and strategies are established for efficient tracking.",
@@ -181,7 +254,39 @@ teamMembers: {
         title: "Collaboration Icon",
         description: "This icon reflects teamwork and collaboration among experts to achieve the project's goals."
       },
-    }
+    },
+
+    //traduccion geoportal
+    geoForm: " Register to access the Geoportal",
+    geoFormName: "Name",
+    geoFormEmail: "Email",
+    geoFormPhone: "Phone",
+    geoFormCity: "City",
+    geoFormLabel: "Would you like to join the community?",
+    geoFormButton: "Submit",
+
+    //traduccion contactos
+    contactTitle: "Contact Us",
+    location: "Location",
+    locationDescription1: "ATA-EPN Research Group",
+    locationDescription2: "UAV´s Laboratory",
+    email: "Email",
+    phone: "Phone",
+    contactQr: "Scan the code for more information",
+    followUs: "Follow us on our social media",
+
+
+
+    //footer
+    or: "or",
+    copyright: 'ATA. All rights reserved.',
+    quickLinks: 'Quick links:',
+    home: 'Home',
+    aboutUs: 'About the project',
+    whatWeDo: 'What do we do?',
+    news: 'News',
+    geoportal: 'Geoportal',
+    contactUs: 'Contacts',
   }
 };
 

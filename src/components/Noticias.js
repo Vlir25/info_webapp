@@ -1,18 +1,8 @@
-/*VENTANA PARA COLOCAR LAS NOTICIAS CORRESPONDIENTES
-VARIABLES --2-> ´noticia1´
-TITULO----> "venta de cultivo"
-CONTENIDO------> "se vendio .........."
-IMAGEN --> "/public/images/noticias" puede añadir para mas comodidad un enlace url
-
-ajustes 2025- correccion de errores -bugs
-*/
-
-
-
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from './context/LanguageContext'; // Asegúrate de que la ruta sea correcta
-import './styles/Noticias.css';
+import { Button, Card, CardBody, CardFooter, CardHeader } from "@material-tailwind/react";
+
 
 const Noticias = () => {
   const navigate = useNavigate();
@@ -109,64 +99,65 @@ const Noticias = () => {
     }
   };
 
-  // Calcular el índice de inicio y fin de las noticias a mostrar
-  const totalNoticias = Object.keys(noticiasData).length;
+  const noticiasOrdenadas = Object.entries(noticiasData)
+  .sort((a, b) => new Date(b[1].date.split('/').reverse().join('-')) - new Date(a[1].date.split('/').reverse().join('-')));
+  
+  const totalNoticias = noticiasOrdenadas.length;
+  const totalPaginas = Math.ceil(totalNoticias / noticiasPorPagina);
   const indexInicio = (paginaActual - 1) * noticiasPorPagina;
   const indexFin = indexInicio + noticiasPorPagina;
-
-  // Obtener las noticias a mostrar en la página actual
-  const noticiasOrdenadas = Object.entries(noticiasData).reverse();
   const noticiasAPresentar = noticiasOrdenadas.slice(indexInicio, indexFin);
 
-  const totalPaginas = Math.ceil(totalNoticias / noticiasPorPagina);
-
   return (
-    <div className="novedades-container">
-      <h2 className="novedades-header">{language === 'es' ? 'Noticias' : 'News'}</h2> {/* Título de la sección */}
-      <div className="items-wrapper">
+    <div className="max-w-5xl mx-auto p-6">
+      <h2 className="text-4xl font-bold mb-8 text-center">
+        {language === 'es' ? 'Noticias' : 'News'}
+      </h2>
+      <div className="space-y-6">
         {noticiasAPresentar.map(([id, noticia]) => {
-          const title = noticia.title[language]; // Acceso directo a las traducciones del título
-          const content = noticia.content[language]; // Acceso directo a las traducciones del contenido
+          const title = noticia.title[language];
+          const content = noticia.content[language];
 
           return (
-            <div className="item" key={id}>
-              <img src={noticia.image} alt={title} className="item-image" />
-              <div className="item-content">
-                <h2 className="item-title">{title}</h2>
-                <p className="item-date">{noticia.date}</p>
-                <p className="item-summary">{content.slice(0, 200)}...</p>
-                <button className="leer-mas-btn" onClick={() => handleLeerMas(id)}>
-                  {visibleNoticia === id ? (language === 'es' ? 'Leer menos' : 'Read less') : (language === 'es' ? 'Leer más' : 'Read more')}
-                </button>
-                {visibleNoticia === id && (
-                  <div className="contenido">
-                    <p className="item-description">{content}</p>
-                  </div>
-                )}
-              </div>
-            </div>
+            <Card key={id} className="shadow-lg">
+              <CardHeader floated={false} className="h-64 overflow-hidden">
+                <img src={noticia.image} alt={title} className="w-full h-full object-cover" />
+              </CardHeader>
+              <CardBody>
+                <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+                <p className="text-gray-600 text-sm mb-2">{noticia.date}</p>
+                <p className="text-gray-700 text-sm mb-4">{content.slice(0, 200)}...</p>
+              </CardBody>
+              <CardFooter className="flex justify-end">
+                <Button className="bg-primary hover:bg-green-700 text-center normal-case" onClick={() => navigate(`/noticia/${id}`, { state: { noticia } })}>
+                  {language === 'es' ? 'Leer más' : 'Read more'}
+                </Button>
+              </CardFooter>
+            </Card>
           );
         })}
       </div>
-
-      {/* Paginación */}
-      <div className="pagination">
-        <button 
-          onClick={() => setPaginaActual(pagina => Math.max(pagina - 1, 1))} 
+      <div className="flex justify-between items-center mt-6">
+        <Button
+          className="bg-primary hover:bg-green-700 text-center "
+          onClick={() => setPaginaActual((pagina) => Math.max(pagina - 1, 1))}
           disabled={paginaActual === 1}
         >
           {language === 'es' ? 'Anterior' : 'Previous'}
-        </button>
-        <span>{language === 'es' ? `Página ${paginaActual} de ${totalPaginas}` : `Page ${paginaActual} of ${totalPaginas}`}</span>
-        <button 
-          onClick={() => setPaginaActual(pagina => Math.min(pagina + 1, totalPaginas))} 
+        </Button>
+        <span className="text-gray-700">
+          {language === 'es' ? `Página ${paginaActual} de ${totalPaginas}` : `Page ${paginaActual} of ${totalPaginas}`}
+        </span>
+        <Button
+          className="bg-primary hover:bg-green-700 text-center"
+          onClick={() => setPaginaActual((pagina) => Math.min(pagina + 1, totalPaginas))}
           disabled={paginaActual === totalPaginas}
         >
           {language === 'es' ? 'Siguiente' : 'Next'}
-        </button>
+        </Button>
       </div>
     </div>
   );
-};
+}
 
 export default Noticias;

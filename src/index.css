@@ -1,12 +1,15 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
-  background-color: #f8f9fa; /* Color de fondo claro para el body */
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -28,7 +31,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  background-color: #e9ecef; /* Fondo ligero para el código */
   padding: 0.2rem 0.4rem; /* Espaciado alrededor del código */
   border-radius: 0.25rem; /* Bordes redondeados */
 }

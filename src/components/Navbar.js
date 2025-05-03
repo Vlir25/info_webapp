@@ -1,26 +1,28 @@
-// Navbar.js - cambios
 import React, { useState, useContext, memo, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { GiZigzagLeaf } from 'react-icons/gi';
+import { Link, useLocation, useNavigate } from 'react-router-dom';  // Agregado useNavigate
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import LoadingScreen from './LoadingScreen';
 import { LanguageContext } from './context/LanguageContext';
 import './styles/Navbar.css';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 
 const LOADING_DELAY = 12000;
 
 const NavLink = memo(({ to, children }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-  
+
   return (
     <li>
-      <Link 
-        to={to} 
-        className={`nav-link ${isActive ? 'active' : ''}`}
+      <Link
+        to={to}
+        className={`nav-link ${isActive ? 'active' : ''} relative`}
         aria-current={isActive ? 'page' : undefined}
       >
         {children}
+        {isActive && (
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
+        )}
       </Link>
     </li>
   );
@@ -35,11 +37,14 @@ NavLink.displayName = 'NavLink';
 
 const LanguageButton = memo(({ lang, currentLang, onClick, children }) => {
   const ariaLabel = `Change language to ${lang.toUpperCase()}`;
-  
+
   return (
     <button
       onClick={() => onClick(lang)}
-      className={`lang-btn ${currentLang === lang ? 'active' : ''}`}
+      className={`lang-btn px-3 py-0.5 rounded ${currentLang === lang
+          ? 'bg-green-500 text-white'
+          : 'bg-gray-200 text-black hover:bg-gray-300'
+        }`}
       aria-label={ariaLabel}
     >
       {children}
@@ -56,13 +61,14 @@ LanguageButton.propTypes = {
 
 LanguageButton.displayName = 'LanguageButton';
 
-const Navbar = ({ 
+const Navbar = ({
   logoSize = '2rem',
   loadingDelay = LOADING_DELAY,
   customLinks,
 }) => {
   const [loading, setLoading] = useState(false);
   const { language, changeLanguage, translations } = useContext(LanguageContext);
+  const navigate = useNavigate();  // Usamos useNavigate para la redirección
 
   // Limpiar el temporizador con useEffect
   useEffect(() => {
@@ -77,41 +83,77 @@ const Navbar = ({
 
   const handleLogoClick = () => {
     setLoading(true);
+    navigate("/inicio");  // Redirige a la página de inicio
+  };
+
+  const handleScrollToSection = (sectionId) => {
+    if (window.location.pathname !== '/inicio') {
+      navigate('/inicio');
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          smooth: true,
+          duration: 500,
+        });
+      }, 100); // Espera un poco para que la navegación ocurra
+    } else {
+      scroller.scrollTo(sectionId, {
+        smooth: true,
+        duration: 500,
+      });
+    }
   };
 
   const defaultLinks = [
-    { to: "/", label: translations[language]?.navbar?.option1 || '¿Qué somos?' },
-    { to: "/testimonio", label: translations[language]?.navbar?.option2 || '¿Qué hacemos?' },
+    { to: "/inicio", label: translations[language]?.navbar?.title || 'Inicio' },
+    { to: "#sobre-el-proyecto", label: translations[language]?.navbar?.option1 || 'Sobre el proyecto' },
+    { to: "/que-hacemos", label: translations[language]?.navbar?.option2 || '¿Qué hacemos?' },
     { to: "/noticias", label: translations[language]?.navbar?.news || 'Noticias' },
-    { to: "/geoportal", label: translations[language]?.navbar?.geoportal || 'Geoportal' }
+    { to: "/geoportal", label: translations[language]?.navbar?.geoportal || 'Geoportal' },
+    { to: "/contactos", label: translations[language]?.navbar?.contacts || 'Contactos' },
+    
   ];
 
   const navLinks = customLinks || defaultLinks;
 
   return (
-    <div className="navbar-container">
-      {loading && <LoadingScreen />}
+    <div className="navbar-container bg-gray-900">
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div 
-          className="navbar-title"
+        <div
+          className="flex items-center space-x-2 cursor-pointer"
           style={{ fontSize: logoSize }}
-          onClick={handleLogoClick}
+          onClick={handleLogoClick}  // Llama a handleLogoClick
           role="button"
           tabIndex={0}
           onKeyPress={(e) => e.key === 'Enter' && handleLogoClick()}
         >
-          <GiZigzagLeaf aria-label="Logo" />
+          <div className="flex items-center">
+            <div className="w-8 h-8 flex items-center justify-center mr-4">
+              <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+            </div>
+            <p className="text-xl text-left">VLIROUS SHORT INITIATIVE:
+              <br />
+              SMART FARMING</p>
+          </div>
         </div>
-
-        <ul className="navbar-links">
+        <ul className="flex space-x-4">
           {navLinks.map(({ to, label }) => (
-            <NavLink key={to} to={to}>
-              {label}
-            </NavLink>
+            to === "#sobre-el-proyecto" ? (
+              <li key={to}>
+                <button
+                  onClick={() => handleScrollToSection('sobre-el-proyecto')}
+                >
+                  {label}
+                </button>
+              </li>
+            ) : (
+              <NavLink key={to} to={to}>
+                {label}
+              </NavLink>
+            )
           ))}
         </ul>
 
-        <div className="language-buttons">
+        <div className="flex space-x-2">
           {['es', 'en'].map((lang) => (
             <LanguageButton
               key={lang}

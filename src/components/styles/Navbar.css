@@ -74,17 +74,7 @@ nav.scrolled {
 }
 
 /* Enlaces con mejor legibilidad */
-.navbar-links a {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  letter-spacing: 0.3px;
-  position: relative;
-}
+
 
 /* Efecto hover refinado */
 .navbar-links a:hover {
