@@ -63,7 +63,7 @@ const teamMembers = [
   {
     name: "Jenny Ávila",
     role: "EPN",
-    img: "https://cdn.pixabay.com/photo/2020/11/29/01/25/woman-5786062_1280.png",
+    img: "/list_colab/colab_12.jpg",
     img2: "/list_colab/colab_9.png",
     linkedIn: "https://www.linkedin.com/in/jenny-%C3%A1vila-v%C3%A9lez-801a3443/"
   },
@@ -95,6 +95,15 @@ const sponsors = [
   {
     name: "Instituto Nacional de Investigación Agropecuarias",
     img: "/list_colab/colab_11.png"
+  },
+  { 
+    name: "Delgado Pitahaya",
+    img: "/images/pitahaya_logo.jpg" 
+  },
+
+  { 
+    name: "ATA Research Group", 
+    img: "/list_colab/logo_h_ ATA.png" 
   },
 ];
 
@@ -255,7 +264,11 @@ const Home = () => {
           <br />
         </div>
       </section>
+      
 
+
+
+     {/* Sección de testimonios */}
       <section className="text-center p-[10vw] pt-8 pb-8 ">
         <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
         <div className="flex flex-wrap justify-center gap-28 mt-6 text-6xl sm:text-4xl md:text-5xl">

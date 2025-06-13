@@ -14,7 +14,7 @@ const Contactos = () => {
 
       <div className="container mx-auto">
         {/* Grid principal con contacto y mapa */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
           {/* Columna izquierda - Contacto */}
           <div className="space-y-10">
             <div className="flex flex-col items-center space-y-2">
