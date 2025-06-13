@@ -121,16 +121,21 @@ const Navbar = ({
         <div
           className="flex items-center space-x-2 cursor-pointer"
           style={{ fontSize: logoSize }}
-          onClick={handleLogoClick}  // Llama a handleLogoClick
+          onClick={handleLogoClick}
           role="button"
           tabIndex={0}
           onKeyPress={(e) => e.key === 'Enter' && handleLogoClick()}
         >
           <div className="flex items-center">
-            <div className="w-8 h-8 flex items-center justify-center mr-4">
-              <span className="text-primary text-4xl"><FontAwesomeIcon icon="fa-solid fa-seedling" /></span>
+            <div className="w-32 h-12 flex items-center justify-center mr-4">
+              <img
+                src="/list_colab/ata_logo_blanco.png"
+                alt="Logo"
+                className="h-full w-auto object-contain"
+                style={{ maxHeight: '48px' }}
+              />
             </div>
-            <p className="text-xl text-left">VLIROUS SHORT INITIATIVE:
+            <p className="text-xl text-left">VLIR-UOS SHORT INITIATIVE:
               <br />
               SMART FARMING</p>
           </div>

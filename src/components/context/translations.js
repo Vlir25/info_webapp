@@ -160,7 +160,7 @@ const translations = {
 
     mainSubTitle: "Smart agriculture for resilient communities",
     mainSubTitle2: "Sustainability and technology at the service of farmers",
-    mainSubTitle3: "How pitahaya drives inclusion, income, and hope",
+    mainSubTitle3: "How pitahaya fosters inclusion, income, and hope",
 
     // Descripción del proyecto
     projectDescription1: "It is an initiative that seeks to revolutionize agricultural production through the use of advanced technologies. Our approach combines: ",
@@ -176,7 +176,7 @@ const translations = {
 
     // traduccion objetivo
     newThemeTitle: "Main Objective",
-    newThemeDescription: "Develop and implement a smart agriculture model to improve dragon fruit crop productivity, optimize resource use, and evaluate the social and economic impact on poverty and inequality reduction.",
+    newThemeDescription: "Develop and implement a smart agriculture model to improve dragon fruit crop productivity, optimize resource use, and evaluate the social and economic impact in reducing poverty and inequality.",
 
     buttonText2: "How we do it",
 
@@ -185,7 +185,7 @@ const translations = {
     newLinesDescription1: "Integration of sensors and remote monitoring to assess crop health.",
     newLinesDescription2: "Application of artificial intelligence for predictive analysis.",
     newLinesDescription3: "Efficient water use and reduction of environmental impact.",
-    newLinesDescription4: "Development of scalable methodologies for small and medium-sized producers.",
+    newLinesDescription4: "Development of scalable methods for small and medium producers.",
 
     // Títulos de las secciones de patrocinadores y gestión
     sponsorsTitle: "Entities Involved",
