@@ -51,6 +51,7 @@ const Contactos = () => {
 
           {/* Columna derecha - Mapa */}
           <div className="w-full h-full rounded-lg overflow-hidden shadow-md">
+            
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.7239407635828!2d-78.49039777311624!3d-0.2099819623676055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b577bc46049%3A0x42f5b4b580f52ed5!2sGrupo%20de%20investigaci%C3%B3n%20ATA-EPN%2C%20Laboratorio%20de%20UAVs!5e0!3m2!1ses!2sec!4v1743509042380!5m2!1ses!2sec"
               className="w-full h-full border-0"
