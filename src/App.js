@@ -41,7 +41,7 @@ const App = () => {
           ) : (
             <>
               <Navbar />
-              <main>
+              <main className="mt-20">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/noticias" element={<Noticias />} />
