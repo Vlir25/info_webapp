@@ -82,7 +82,6 @@ const CarouselImg = ({ images }) => {
 
                 <Button size="md" className=" bg-primary hover:bg-green-700" >
                   {currentTranslations.buttonText1}
-
                 </Button>  </Link>
               )}
             </div>

@@ -12,6 +12,20 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
+// Validación para detectar valores faltantes
+if (
+  !firebaseConfig.apiKey ||
+  !firebaseConfig.authDomain ||
+  !firebaseConfig.projectId ||
+  !firebaseConfig.storageBucket ||
+  !firebaseConfig.messagingSenderId ||
+  !firebaseConfig.appId
+) {
+  // eslint-disable-next-line no-console
+  console.error("❌ Faltan variables de entorno de Firebase. Revisa tu archivo .env y reinicia el servidor.");
+}
+
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

@@ -83,7 +83,18 @@ const Noticias = () => {
         date: "20/11/2024",
         image: '/images/Conferencia_Doc.jpg',
       },
-
+      'alianza-internacional': {
+        title: {
+          es: "Fortaleciendo alianzas científicas internacionales",
+          en: "Strengthening international scientific collaborations"
+        },
+        content: {
+          es: "Nuestro equipo realizó una visita científica a la universidad KU Leuven en Bélgica, con el objetivo de explorar oportunidades de financiamiento conjunto y avanzar en el desarrollo de tecnologías basadas en inteligencia artificial para aplicaciones de monitoreo remoto. Esta visita marca un hito en la proyección internacional de nuestro trabajo y abre nuevas posibilidades de colaboración académica y tecnológica.",
+          en: "Our team carried out a scientific visit to KU Leuven in Belgium 🇧🇪 to explore opportunities for joint research funding and to advance the development of artificial intelligence technologies for remote monitoring. This visit marks a key milestone in the international projection of our work and opens new possibilities for academic and technological cooperation."
+        },
+        date: "05/06/2025",
+        image: '/images/visita_belgica.jpg', 
+      },
   };
 
   const [visibleNoticia, setVisibleNoticia] = useState(null);

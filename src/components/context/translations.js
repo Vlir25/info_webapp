@@ -11,9 +11,9 @@ const translations = {
     },
 
     // Traducción del título principal de la página
-    mainTitle: "Sembrando Tecnología, Cosechando Futuro",
-    mainTitle2: "Innovar para Cultivar con Conciencia",
-    mainTitle3: "Más Allá del Cultivo",
+    mainTitle: "Sembrando tecnología, cosechando futuro",
+    mainTitle2: "Innovar para cultivar con conciencia",
+    mainTitle3: "Más allá del cultivo",
 
     mainSubTitle: "Agricultura inteligente para comunidades resilientes",
     mainSubTitle2: "Sostenibilidad y tecnología al servicio del agricultor",
@@ -27,7 +27,7 @@ const translations = {
     projectsubDescription1: "Monitoreo Remoto",
     projectsubDescription2: "Inteligencia Artificial",
     projectsubDescription3: "Análisis de Datos",
-    projectDescription2: "para optimizar el rendimiento de los cultivos y reducir la desigualdad en comunidades rurales.",
+    projectDescription2: "Optimizamos el rendimiento durante la cosecha de cultivos y reducimos la desigualdad en comunidades rurales en el Ecuador.",
 
     aboutProject: "Sobre el proyecto",
 
@@ -167,7 +167,8 @@ const translations = {
     projectsubDescription1: "Remote Monitoring",
     projectsubDescription2: "Artificial Intelligence",
     projectsubDescription3: "Data Analysis",
-    projectDescription2: "to optimize crop yield and reduce inequality in rural communities.",
+    projectDescription2: "We optimize performance during crop harvest and reduce inequality in rural communities in Ecuador.",
+
 
     buttonText1: "Learn more",
 
