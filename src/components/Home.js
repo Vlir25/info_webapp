@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageContext } from './context/LanguageContext';
 import CarouselImg from './CarouselImg';
@@ -89,27 +89,33 @@ const sponsors = [
     img: "/list_colab/EPN_logo_big.png"
   },
   {
-    name: "KU Leuven",
+    name: "ATA Research Group",
+    img: "/list_colab/logo_h_ ATA.png"
+  },
+  {
+    name: "Katholieke Universiteit Leuven",
     img: "/list_colab/colab_10.png"
+  },
+  {
+    name: "Embedded and Artificially intelligent VISion Engineering",
+    img: "/list_colab/eavise_logo.png"
   },
   {
     name: "Instituto Nacional de Investigación Agropecuarias",
     img: "/list_colab/colab_11.png"
   },
-  { 
+  {
     name: "Delgado Pitahaya",
-    img: "/images/pitahaya_logo.jpg" 
-  },
-
-  { 
-    name: "ATA Research Group", 
-    img: "/list_colab/logo_h_ ATA.png" 
+    img: "/images/pitahaya_logo.jpg"
   },
 ];
+
+
 
 const Home = () => {
   const { language, translations } = useContext(LanguageContext);
   const currentTranslations = translations[language];
+
 
 
   // Generar imágenes dinámicamente con traducciones
@@ -117,22 +123,30 @@ const Home = () => {
     {
       src: "/images/team_drone.jpg",
       alt: "Imagen principal 1",
-      title: currentTranslations.mainTitle || "Sembrando Tecnología, Cosechando Futuro",
+      title: currentTranslations.mainTitle || "Sembrando tecnología, cosechando Futuro",
       description: currentTranslations.mainSubTitle || "Agricultura inteligente para comunidades resilientes",
     },
     {
       src: "/images/gallery_1.jpg",
       alt: "Imagen principal 2",
-      title: currentTranslations.mainTitle2 || "Innovar para Cultivar con Conciencia",
+      title: currentTranslations.mainTitle2 || "Innovar para cultivar con conciencia",
       description: currentTranslations.mainSubTitle2 || "Sostenibilidad y tecnología al servicio del agricultor",
     },
     {
       src: "/images/monitoreo.jpeg",
       alt: "Monitoreo Inteligente",
-      title: currentTranslations.mainTitle3 || "Más Allá del Cultivo",
+      title: currentTranslations.mainTitle3 || "Más allá del Cultivo",
       description: currentTranslations.mainSubTitle3 || "Cómo la pitahaya impulsa inclusión, ingresos y esperanza",
     },
   ];
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.async = true;
+    script.setAttribute('data-elfsight-app-lazy', '');
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className="" >
@@ -152,7 +166,7 @@ const Home = () => {
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-desktop" />
             <p className="text-xl mt-2">{currentTranslations.projectsubDescription1}</p>
-            
+
           </div>
           <div className="text-center flex-1 min-w-[120px]">
             <FontAwesomeIcon icon="fa-solid fa-robot" />
@@ -180,8 +194,8 @@ const Home = () => {
             <p className="text-xl text-justify">{currentTranslations.newThemeDescription}
               <br />
               <br />
-              <br />                <Link to="/que-hacemos" className="text-white">
-
+              <br />
+              <Link to="/que-hacemos" className="text-white">
                 <Button size="lg" className="bg-primary hover:bg-green-700 text-center normal-case">
                   ¿{currentTranslations.buttonText2}?
 
@@ -190,9 +204,9 @@ const Home = () => {
           </div>
           {/* Imagen a la derecha */}
           <div className="md:w-1/2 p-4 flex justify-center">
-            <img 
-              src="/images/postal.jpeg" 
-              alt="Objetivos del Proyecto" 
+            <img
+              src="/images/postal.jpeg"
+              alt="Objetivos del Proyecto"
               className="w-full h-full object-cover rounded-lg shadow-md" // Cambiado a w-full y h-full
             />
           </div>
@@ -244,11 +258,10 @@ const Home = () => {
             />
           </div>
         </div>
-
       </section>
 
 
-      {/* Sponsor */}
+      {/* Sponsor principal*/}
       <section className="text-center bg-gray-300 p-[10vw] pt-8 pb-8 ">
         <div className=" flex flex-col md:flex-row items-center mb-10">
           {/* Texto a la izquierda */}
@@ -264,24 +277,39 @@ const Home = () => {
           <br />
         </div>
       </section>
-      
 
-
-
-     {/* Sección de testimonios */}
-      <section className="text-center p-[10vw] pt-8 pb-8 ">
+      {/* Sección de sponsors participantes */}
+      <section className="text-center px-[10vw] pt-8 pb-8">
         <h2 className="text-5xl font-bold mb-8">{currentTranslations.sponsorsTitle}</h2>
-        <div className="flex flex-wrap justify-center gap-28 mt-6 text-6xl sm:text-4xl md:text-5xl">
-          {sponsors.map((sponsor) => (
-            <div className="sponsor-item" key={sponsor.name} style={{
-              textAlign: 'center',
-              margin: '10px'
-            }}>
-              <img src={sponsor.img} alt={sponsor.name} style={{
-                maxWidth: '200px',
-                height: 'auto'
-              }} />
-              <h3>{sponsor.name}</h3>
+
+        {/* Logos principales (arriba en grid de 4 columnas) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+          {sponsors.slice(0, 4).map((sponsor) => (
+            <div key={sponsor.name} className="flex flex-col items-center text-center">
+              <div className="h-[100px] flex items-center justify-center">
+                <img
+                  src={sponsor.img}
+                  alt={sponsor.name}
+                  className="max-h-full object-contain"
+                />
+              </div>
+              <h3 className="text-base mt-2">{sponsor.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Logos restantes (centrados abajo) */}
+        <div className="flex flex-wrap justify-center gap-10">
+          {sponsors.slice(4).map((sponsor) => (
+            <div key={sponsor.name} className="flex flex-col items-center text-center">
+              <div className="h-[100px] flex items-center justify-center">
+                <img
+                  src={sponsor.img}
+                  alt={sponsor.name}
+                  className="max-h-full object-contain"
+                />
+              </div>
+              <h3 className="text-base mt-2">{sponsor.name}</h3>
             </div>
           ))}
         </div>
@@ -367,9 +395,9 @@ const Home = () => {
 
       </section>
 
-
-      {/* Contenedor de ultimas noticias */}
-      
+      <section className="text-center px-[10vw] pt-8 pb-8 bg-white">
+        <div className="elfsight-app-29264217-0f61-4414-a027-48359c08ed39" data-elfsight-app-lazy></div>
+      </section>
 
 
     </div>

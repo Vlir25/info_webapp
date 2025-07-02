@@ -125,7 +125,7 @@ const Geoportal = () => {
           </div>
 
           <button type="submit" className="w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
-          {currentTranslations.geoFormButton}
+            {currentTranslations.geoFormButton}
           </button>
         </form>
 
@@ -134,9 +134,12 @@ const Geoportal = () => {
   }
 
   return (
-    <div className="home-container1">
-      {/* Sección principal  */}
-      <section className="tech-intro1">
+    <div className="home-container1 space-y-16 px-6 lg:px-20 py-10 bg-gray-50">
+      {/* Sección del mapa interactivo */}
+      <section className="w-full h-[70vh] rounded-xl shadow-lg overflow-hidden border border-gray-300">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+          Mapa Interactivo
+        </h2>
         <iframe
           src="/20240119webmap/index.html"
           width="100%"
@@ -145,39 +148,59 @@ const Geoportal = () => {
           title="Mapa interactivo"
         ></iframe>
       </section>
-      {/* Nueva Sección */}
-      <section className="new-theme-section1">
-        <h1>Gráficas</h1>
+
+      {/* Sección del gráfico */}
+      <section className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
         <ExcelChart />
       </section>
 
-      {/* Sección de chat */}
-      <section className="CBox">
-        <h1>ChatBot Inteligente</h1>
-        <div id="chat-box">
+      {/* Sección del chatbot */}
+      <section className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+          🤖 ChatBot Inteligente
+        </h2>
+        <div
+          id="chat-box"
+          className="h-64 overflow-y-auto bg-gray-100 p-4 rounded mb-4 space-y-2 text-sm"
+        >
           {chatMessages.map((msg, idx) => (
-            <div key={idx} className={msg.role}>
+            <div
+              key={idx}
+              className={`p-2 rounded-lg max-w-xl ${msg.role === "assistant"
+                  ? "bg-blue-100 text-left"
+                  : "bg-green-100 text-right ml-auto"
+                }`}
+            >
               {msg.role === "assistant" ? (
-                <MarkdownRenderer content={msg.content} /> // Usa MarkdownRenderer para respuestas del asistente
+                <MarkdownRenderer content={msg.content} />
               ) : (
                 msg.content
               )}
             </div>
           ))}
-          {isLoading && <div>...Cargando respuesta...</div>}
+          {isLoading && (
+            <div className="text-gray-500 italic">...Cargando respuesta...</div>
+          )}
         </div>
-        <div className="input-container">
+        <div className="flex gap-2">
           <input
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             placeholder="Escribe tu mensaje"
+            className="flex-grow p-2 border rounded focus:outline-none focus:ring focus:border-blue-400"
           />
-          <button onClick={handleUserInput}>Enviar</button>
+          <button
+            onClick={handleUserInput}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          >
+            Enviar
+          </button>
         </div>
       </section>
     </div>
   );
+
 };
 
 export default Geoportal;

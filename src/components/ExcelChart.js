@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import * as XLSX from "xlsx";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFileExcel,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons";
+
 
 const ExcelChart = () => {
   const [selectedFile, setSelectedFile] = useState(""); // Archivo seleccionado
@@ -46,14 +52,30 @@ const ExcelChart = () => {
   }, [selectedFile]);
 
   return (
-    <div>
-      <h2>Selecciona un archivo para graficar</h2>
-      <select onChange={(e) => setSelectedFile(e.target.value)} value={selectedFile}>
-        <option value="">Seleccione un archivo</option>
-        {files.map((file, index) => (
-          <option key={index} value={file}>{file}</option>
-        ))}
-      </select>
+    <div max-w-6xl mx-auto p-6>
+      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 flex items-center justify-center gap-2">
+        <FontAwesomeIcon icon={faChartLine} className="text-primary text-4xl" />
+        Visualización de datos de sensores
+      </h2>
+
+      <div className="flex flex-col items-center mb-8">
+        <label className="mb-2 text-lg text-gray-700 font-medium">
+          <FontAwesomeIcon icon={faFileExcel} className="mr-2 text-green-600" />
+          Selecciona un archivo:
+        </label>
+        <select
+          className="w-full md:w-1/3 p-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400"
+          onChange={(e) => setSelectedFile(e.target.value)}
+          value={selectedFile}
+        >
+          <option value="">-- Elegir archivo --</option>
+          {files.map((file, index) => (
+            <option key={index} value={file}>
+              📄 {file}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {data.length > 0 && (
         <ResponsiveContainer width="100%" height={400}>
